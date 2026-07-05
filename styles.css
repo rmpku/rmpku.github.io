@@ -804,6 +804,89 @@ body[data-language="zh"] .lang-en {
   font-weight: 600;
 }
 
+.patents-section {
+  background:
+    linear-gradient(180deg, rgba(231, 244, 255, 0.58), rgba(255, 255, 255, 0.92)),
+    var(--paper);
+}
+
+.patent-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.patent-card {
+  position: relative;
+  min-height: 220px;
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 117, 222, 0.15);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 12px 34px rgba(23, 54, 112, 0.06);
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.patent-card::after {
+  position: absolute;
+  right: -32px;
+  bottom: -42px;
+  width: 130px;
+  height: 130px;
+  border: 1px solid rgba(0, 117, 222, 0.12);
+  border-radius: 50%;
+  content: "";
+}
+
+.patent-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 117, 222, 0.32);
+  box-shadow: 0 18px 38px rgba(23, 54, 112, 0.1);
+}
+
+.patent-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.patent-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 34px 0 12px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.patent-card h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.patent-card h3 a:hover {
+  color: var(--blue);
+}
+
+.patent-card h3 a > span[aria-hidden="true"] {
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.patent-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
 .chronological-timeline {
   position: relative;
   max-width: 930px;
@@ -1157,6 +1240,10 @@ body[data-language="zh"] .lang-en {
     display: block;
   }
 
+  .patent-list {
+    grid-template-columns: 1fr;
+  }
+
   .publication-filters {
     margin-bottom: 38px;
   }
@@ -1305,6 +1392,16 @@ body[data-language="zh"] .lang-en {
 
   .publication-meta span:first-child {
     font-size: inherit;
+  }
+
+  .patent-card {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .patent-card h3 {
+    margin-top: 24px;
+    font-size: 16px;
   }
 
   .chronological-timeline::before {

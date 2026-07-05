@@ -49,7 +49,7 @@ if (/\b(under review|submitted|审稿中|投稿中)\b/i.test(publicationBlock)) 
   throw new Error("Publication list includes a submitted or under-review entry");
 }
 
-for (const id of ["about", "research", "publications", "experience", "honors", "service"]) {
+for (const id of ["about", "research", "publications", "patents", "experience", "honors", "service"]) {
   if (!html.includes(`id="${id}"`)) throw new Error(`Missing section #${id}`);
 }
 
@@ -109,6 +109,26 @@ if ((html.match(/class="publication-figure"/g) || []).length !== 13) {
 
 if ((html.match(/class="publication-title-link"/g) || []).length !== 13) {
   throw new Error("Expected one publication link for every paper");
+}
+
+if ((html.match(/class="patent-card reveal"/g) || []).length !== 7) {
+  throw new Error("Expected seven authorized patent cards");
+}
+
+for (const patent of [
+  "CN112132747B",
+  "CN111563938B",
+  "CN111526261B",
+  "CN110942413B",
+  "CN110728164B",
+  "CN110360924B",
+  "CN110308117B",
+]) {
+  if (!html.includes(patent)) throw new Error(`Missing authorized patent: ${patent}`);
+}
+
+if (/CN(?:112132747|111563938|111526261|110942413|110728164|110360924|110308117)A\b/.test(html)) {
+  throw new Error("Authorized patents must use grant publication numbers ending in B");
 }
 
 for (const url of [

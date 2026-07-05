@@ -34,4 +34,6 @@ snapshot workflow.
 About, experience, and education share one early profile section, with the latter two
 presented as a reverse-chronological timeline. Advisor homepages use compact external-link
 icons, every publication title links to its Scholar record or exact Scholar search, and
-each paper includes a replaceable figure slot for future experiment screenshots.
+each paper includes a replaceable figure slot for future experiment screenshots. The
+patent section lists seven granted Chinese invention patents with grant publication
+numbers, authorization dates, bilingual titles, and external patent records.
