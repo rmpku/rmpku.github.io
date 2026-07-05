@@ -1,0 +1,11 @@
+{
+  "name": "rui-ma-research-profile",
+  "private": true,
+  "scripts": {
+    "test": "node scripts/check-site.mjs",
+    "update:scholar": "node scripts/update-scholar-snapshot.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.53.2"
+  }
+}

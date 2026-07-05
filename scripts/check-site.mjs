@@ -9,8 +9,15 @@ const required = [
   "script.js",
   "favicon.svg",
   ".nojekyll",
-  "assets/cv-en.pdf",
-  "assets/cv-zh.docx",
+  "assets/scholar-citations.png",
+  "assets/terminal-garden.svg",
+  "assets/logos/pku.png",
+  "assets/logos/nxu.png",
+  "assets/logos/ncepu.png",
+  "assets/logos/ucas.svg",
+  "assets/logos/ikingtec.svg",
+  "scripts/update-scholar-snapshot.mjs",
+  ".github/workflows/update-scholar-snapshot.yml",
 ];
 
 await Promise.all(required.map((path) => access(join(root, path))));
@@ -39,10 +46,30 @@ for (const id of ["about", "research", "publications", "experience", "honors", "
   if (!html.includes(`id="${id}"`)) throw new Error(`Missing section #${id}`);
 }
 
-for (const href of ["assets/cv-en.pdf", "assets/cv-zh.docx", "styles.css", "script.js"]) {
+for (const href of [
+  "assets/scholar-citations.png",
+  "assets/terminal-garden.svg",
+  "styles.css",
+  "script.js",
+]) {
   if (!html.includes(`href="${href}"`) && !html.includes(`src="${href}"`)) {
     throw new Error(`Missing reference to ${href}`);
   }
 }
 
-console.log("PASS: 13 accepted/published papers; links and required sections validated");
+if (/\.(pdf|docx)\b|assets\/cv-/i.test(html)) {
+  throw new Error("The page still exposes a CV or document attachment");
+}
+
+for (const url of [
+  "https://www.ai.pku.edu.cn/info/1139/2918.htm",
+  "https://liuziwei7.github.io/",
+]) {
+  if (!html.includes(url)) throw new Error(`Missing advisor homepage: ${url}`);
+}
+
+if (html.includes("张尚航") || !html.includes("仉尚航")) {
+  throw new Error("The Chinese spelling of 仉尚航 is missing or incorrect");
+}
+
+console.log("PASS: content, publications, advisor links, logos, and attachment policy validated");

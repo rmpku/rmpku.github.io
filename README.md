@@ -17,12 +17,16 @@ Then open `http://127.0.0.1:4173`.
 - The publications section contains only published or formally accepted papers.
 - Papers marked submitted or under review are intentionally excluded.
 - Phone and WeChat details are intentionally omitted from the public site.
+- CV files and download links are intentionally omitted; all public information is displayed in the page.
 
 ## Structure
 
 - `index.html` — semantic bilingual content
-- `styles.css` — responsive research/geek visual system
+- `styles.css` — responsive programmer-romantic visual system
 - `script.js` — language, navigation, and publication filtering
-- `assets/` — downloadable CV files
+- `assets/` — institution logos, the terminal-garden artwork, and the Scholar snapshot
+- `scripts/update-scholar-snapshot.mjs` — weekly Scholar citation capture
+- `.github/workflows/update-scholar-snapshot.yml` — scheduled refresh every Monday
 
-The site is dependency-free and served directly from the `main` branch by GitHub Pages.
+The website itself is dependency-free. Playwright is used only by the scheduled Scholar
+snapshot workflow.
