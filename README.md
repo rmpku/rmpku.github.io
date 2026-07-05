@@ -22,11 +22,15 @@ Then open `http://127.0.0.1:4173`.
 ## Structure
 
 - `index.html` — semantic bilingual content
-- `styles.css` — responsive programmer-romantic visual system
+- `styles.css` — responsive warm-white editorial visual system
 - `script.js` — language, navigation, and publication filtering
-- `assets/` — institution logos, the terminal-garden artwork, and the Scholar snapshot
+- `assets/` — profile portrait, institution logos, and the Scholar snapshot
 - `scripts/update-scholar-snapshot.mjs` — weekly Scholar citation capture
 - `.github/workflows/update-scholar-snapshot.yml` — scheduled refresh every Monday
 
 The website itself is dependency-free. Playwright is used only by the scheduled Scholar
 snapshot workflow.
+
+Experience and education are presented as one reverse-chronological timeline. Advisor
+homepages use compact external-link icons, while visible email addresses preserve their
+lowercase spelling.

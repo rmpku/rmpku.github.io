@@ -10,7 +10,7 @@ const required = [
   "favicon.svg",
   ".nojekyll",
   "assets/scholar-citations.png",
-  "assets/terminal-garden.svg",
+  "assets/profile.png",
   "assets/logos/pku.png",
   "assets/logos/nxu.png",
   "assets/logos/ncepu.png",
@@ -22,7 +22,10 @@ const required = [
 
 await Promise.all(required.map((path) => access(join(root, path))));
 
-const html = await readFile(join(root, "index.html"), "utf8");
+const [html, css] = await Promise.all([
+  readFile(join(root, "index.html"), "utf8"),
+  readFile(join(root, "styles.css"), "utf8"),
+]);
 const publicationCount = (html.match(/<article class="publication reveal"/g) || []).length;
 if (publicationCount !== 13) {
   throw new Error(`Expected 13 publications, found ${publicationCount}`);
@@ -48,7 +51,7 @@ for (const id of ["about", "research", "publications", "experience", "honors", "
 
 for (const href of [
   "assets/scholar-citations.png",
-  "assets/terminal-garden.svg",
+  "assets/profile.png",
   "styles.css",
   "script.js",
 ]) {
@@ -72,4 +75,24 @@ if (html.includes("张尚航") || !html.includes("仉尚航")) {
   throw new Error("The Chinese spelling of 仉尚航 is missing or incorrect");
 }
 
-console.log("PASS: content, publications, advisor links, logos, and attachment policy validated");
+if (html.includes("assets/terminal-garden.svg")) {
+  throw new Error("The removed flower artwork is still referenced");
+}
+
+if ((html.match(/class="timeline chronological-timeline"/g) || []).length !== 1) {
+  throw new Error("Experience and education must use one chronological timeline");
+}
+
+if ((html.match(/class="[^"]*external-link[^"]*"/g) || []).length < 6) {
+  throw new Error("Advisor links must use icon-only external-link styling");
+}
+
+if (!html.includes('class="email-link"') || !css.includes("text-transform: none")) {
+  throw new Error("Lowercase email rendering is not protected");
+}
+
+if (!css.includes("white-space: nowrap")) {
+  throw new Error("Long English section headings are not protected from wrapping");
+}
+
+console.log("PASS: content, portrait, timeline, advisor links, email, and publications validated");
