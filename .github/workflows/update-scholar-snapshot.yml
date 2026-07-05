@@ -23,14 +23,14 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm update:scholar
-      - name: Commit a changed snapshot
+      - name: Commit changed Scholar data
         run: |
-          if git diff --quiet -- assets/scholar-citations.png; then
-            echo "Scholar snapshot is unchanged."
+          if git diff --quiet -- assets/scholar-citations.png assets/scholar-stats.json; then
+            echo "Scholar data is unchanged."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/scholar-citations.png
-          git commit -m "chore: refresh Scholar citation snapshot"
+          git add assets/scholar-citations.png assets/scholar-stats.json
+          git commit -m "chore: refresh Scholar citation data"
           git push

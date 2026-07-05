@@ -10,7 +10,9 @@ const required = [
   "favicon.svg",
   ".nojekyll",
   "assets/scholar-citations.png",
+  "assets/scholar-stats.json",
   "assets/profile.png",
+  "assets/world-model-visual.png",
   "assets/logos/pku-seal.svg",
   "assets/logos/nxu.png",
   "assets/logos/ncepu.png",
@@ -22,6 +24,18 @@ const required = [
   "assets/research/multimodal-trust.png",
   "assets/research/copyright-authentication.png",
   "assets/research/content-traceability.png",
+  "assets/publications/waveface.png",
+  "assets/publications/see-to-act.png",
+  "assets/publications/scene-adaptive-crowd-counting.png",
+  "assets/publications/enhanced-blind-watermarking.png",
+  "assets/publications/frame-recurrent-crowd-counting.png",
+  "assets/publications/towards-blind-watermarking.png",
+  "assets/publications/chosen-plaintext-attack.png",
+  "assets/publications/optical-information-hiding.png",
+  "assets/publications/multi-image-encryption.png",
+  "assets/publications/scanning-position-error-correction.png",
+  "assets/publications/sharpness-autofocusing.png",
+  "assets/publications/natural-speckle-watermarking.png",
 ];
 
 await Promise.all(required.map((path) => access(join(root, path))));
@@ -87,7 +101,7 @@ for (const href of [
   "styles.css",
   "script.js",
 ]) {
-  if (!html.includes(`href="${href}"`) && !html.includes(`src="${href}"`)) {
+  if (!html.includes(`href="${href}`) && !html.includes(`src="${href}`)) {
     throw new Error(`Missing reference to ${href}`);
   }
 }
@@ -132,6 +146,12 @@ if (!html.includes("ruima AT pku.edu.cn")) {
 if (!html.includes("authorized patents") || !html.includes("项已授权发明专利")) {
   throw new Error("The hero statistics must include authorized patents");
 }
+if (!html.includes('id="scholar-citations-count"') || !html.includes("Google Scholar citations")) {
+  throw new Error("The hero statistics must include the weekly Scholar citation count");
+}
+if (!html.includes('class="world-model-visual"')) {
+  throw new Error("The hero must include the generated world-model visual");
+}
 if ((html.match(/class="timeline-org"/g) || []).length !== 6) {
   throw new Error("Every timeline entry must show an explicit organization name");
 }
@@ -155,6 +175,9 @@ if ((html.match(/class="research-visual"/g) || []).length !== 4) {
 
 if ((html.match(/class="publication-figure"/g) || []).length !== 13) {
   throw new Error("Expected one replaceable figure slot for every publication");
+}
+if ((html.match(/class="[^"]*\bpublication-figure-image\b[^"]*"/g) || []).length !== 12) {
+  throw new Error("Expected twelve supplied publication figures");
 }
 
 if ((html.match(/class="publication-title-link"/g) || []).length !== 13) {
@@ -200,6 +223,13 @@ const logoRule = css.match(/\.timeline-logo\s*\{([\s\S]*?)\}/)?.[1] || "";
 const logoImageRule = css.match(/\.timeline-logo img\s*\{([\s\S]*?)\}/)?.[1] || "";
 if (/\bbackground\s*:|\bfilter\s*:/.test(logoRule + logoImageRule)) {
   throw new Error("Timeline logos must not receive a background or color filter");
+}
+
+if (!/\.stat span\s*\{[\s\S]*?font-size:\s*13px/.test(css)) {
+  throw new Error("Statistic labels must be enlarged by two pixels");
+}
+if (!/\.footer-bottom\s*\{[\s\S]*?font-size:\s*11px/.test(css)) {
+  throw new Error("Footer copyright and back-to-top text must be enlarged");
 }
 
 console.log("PASS: integrated profile, visuals, links, logos, Scholar, and publications validated");

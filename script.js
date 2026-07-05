@@ -132,6 +132,26 @@
     });
   }
 
+  const scholarCitationCount = document.querySelector("#scholar-citations-count");
+  if (scholarCitationCount) {
+    fetch("assets/scholar-stats.json", { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) throw new Error("Scholar statistics are unavailable");
+        return response.json();
+      })
+      .then((stats) => {
+        const citations = Number(stats.citations);
+        if (!Number.isInteger(citations) || citations < 0) return;
+        scholarCitationCount.textContent = citations.toLocaleString("en-US");
+        if (typeof stats.updatedAt === "string") {
+          scholarCitationCount.dataset.updatedAt = stats.updatedAt;
+        }
+      })
+      .catch(() => {
+        // Keep the server-rendered fallback when the weekly data file is unavailable.
+      });
+  }
+
   const currentYear = document.querySelector("#current-year");
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
 })();
