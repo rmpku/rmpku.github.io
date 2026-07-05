@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" role="img" aria-labelledby="title">
   <title id="title">iKINGTEC / 云圣智能</title>
-  <rect width="420" height="96" rx="16" fill="#fff"/>
   <path d="M27 61V35h10v26zm15 0V35h10v10l12-10h14L62 48l18 13H65L52 51v10z" fill="#0878d1"/>
   <text x="92" y="51" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#14324a">iKINGTEC</text>
   <text x="94" y="72" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" letter-spacing="5" fill="#0878d1">云圣智能</text>

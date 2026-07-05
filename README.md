@@ -24,13 +24,14 @@ Then open `http://127.0.0.1:4173`.
 - `index.html` — semantic bilingual content
 - `styles.css` — responsive warm-white editorial visual system
 - `script.js` — language, navigation, and publication filtering
-- `assets/` — profile portrait, institution logos, and the Scholar snapshot
+- `assets/` — profile portrait, original-color institution logos, research illustrations, and the Scholar snapshot
 - `scripts/update-scholar-snapshot.mjs` — weekly Scholar citation capture
 - `.github/workflows/update-scholar-snapshot.yml` — scheduled refresh every Monday
 
 The website itself is dependency-free. Playwright is used only by the scheduled Scholar
 snapshot workflow.
 
-Experience and education are presented as one reverse-chronological timeline. Advisor
-homepages use compact external-link icons, while visible email addresses preserve their
-lowercase spelling.
+About, experience, and education share one early profile section, with the latter two
+presented as a reverse-chronological timeline. Advisor homepages use compact external-link
+icons, every publication title links to its Scholar record or exact Scholar search, and
+each paper includes a replaceable figure slot for future experiment screenshots.

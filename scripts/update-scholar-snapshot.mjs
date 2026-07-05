@@ -14,7 +14,7 @@ const browser = await chromium.launch({ headless: true });
 try {
   const page = await browser.newPage({
     viewport: { width: 1280, height: 900 },
-    deviceScaleFactor: 1,
+    deviceScaleFactor: 2,
   });
   await page.goto(profile, { waitUntil: "domcontentloaded", timeout: 60_000 });
 

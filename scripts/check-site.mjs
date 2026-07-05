@@ -11,13 +11,17 @@ const required = [
   ".nojekyll",
   "assets/scholar-citations.png",
   "assets/profile.png",
-  "assets/logos/pku.png",
+  "assets/logos/pku-seal.svg",
   "assets/logos/nxu.png",
   "assets/logos/ncepu.png",
   "assets/logos/ucas.svg",
   "assets/logos/ikingtec.svg",
   "scripts/update-scholar-snapshot.mjs",
   ".github/workflows/update-scholar-snapshot.yml",
+  "assets/research/embodied-safety.png",
+  "assets/research/multimodal-trust.png",
+  "assets/research/copyright-authentication.png",
+  "assets/research/content-traceability.png",
 ];
 
 await Promise.all(required.map((path) => access(join(root, path))));
@@ -95,4 +99,37 @@ if (!css.includes("white-space: nowrap")) {
   throw new Error("Long English section headings are not protected from wrapping");
 }
 
-console.log("PASS: content, portrait, timeline, advisor links, email, and publications validated");
+if ((html.match(/class="research-visual"/g) || []).length !== 4) {
+  throw new Error("Expected four Research Interests visuals");
+}
+
+if ((html.match(/class="publication-figure"/g) || []).length !== 13) {
+  throw new Error("Expected one replaceable figure slot for every publication");
+}
+
+if ((html.match(/class="publication-title-link"/g) || []).length !== 13) {
+  throw new Error("Expected one publication link for every paper");
+}
+
+for (const url of [
+  "https://eecs.pku.edu.cn/xxkxjsxy/info/1503/6701.htm",
+  "https://people.ucas.ac.cn/~sys",
+]) {
+  if (!html.includes(url)) throw new Error(`Missing advisor homepage: ${url}`);
+}
+
+if (!html.includes('class="hero-portrait"') || html.includes('class="about-profile"')) {
+  throw new Error("The portrait must appear beside the hero name, not in About");
+}
+
+if (!/class="[^"]*integrated-profile[^"]*"/.test(html) || !html.includes('id="experience"')) {
+  throw new Error("About and Experience must be integrated in one early section");
+}
+
+const logoRule = css.match(/\.timeline-logo\s*\{([\s\S]*?)\}/)?.[1] || "";
+const logoImageRule = css.match(/\.timeline-logo img\s*\{([\s\S]*?)\}/)?.[1] || "";
+if (/\bbackground\s*:|\bfilter\s*:/.test(logoRule + logoImageRule)) {
+  throw new Error("Timeline logos must not receive a background or color filter");
+}
+
+console.log("PASS: integrated profile, visuals, links, logos, Scholar, and publications validated");
