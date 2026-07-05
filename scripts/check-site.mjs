@@ -13,6 +13,7 @@ const required = [
   "assets/scholar-stats.json",
   "assets/profile.png",
   "assets/world-model-visual.png",
+  "assets/world-model-visual-v2.png",
   "assets/logos/pku-seal.svg",
   "assets/logos/nxu.png",
   "assets/logos/ncepu.png",
@@ -36,6 +37,7 @@ const required = [
   "assets/publications/scanning-position-error-correction.png",
   "assets/publications/sharpness-autofocusing.png",
   "assets/publications/natural-speckle-watermarking.png",
+  "assets/publications/enhanced-visual-cryptography.png",
 ];
 
 await Promise.all(required.map((path) => access(join(root, path))));
@@ -152,6 +154,9 @@ if (!html.includes('id="scholar-citations-count"') || !html.includes("Google Sch
 if (!html.includes('class="world-model-visual"')) {
   throw new Error("The hero must include the generated world-model visual");
 }
+if (!html.includes('src="assets/world-model-visual-v2.png"')) {
+  throw new Error("The hero must use the simplified mathematical world-model visual");
+}
 if ((html.match(/class="timeline-org"/g) || []).length !== 6) {
   throw new Error("Every timeline entry must show an explicit organization name");
 }
@@ -176,8 +181,8 @@ if ((html.match(/class="research-visual"/g) || []).length !== 4) {
 if ((html.match(/class="publication-figure"/g) || []).length !== 13) {
   throw new Error("Expected one replaceable figure slot for every publication");
 }
-if ((html.match(/class="[^"]*\bpublication-figure-image\b[^"]*"/g) || []).length !== 12) {
-  throw new Error("Expected twelve supplied publication figures");
+if ((html.match(/class="[^"]*\bpublication-figure-image\b[^"]*"/g) || []).length !== 13) {
+  throw new Error("Expected thirteen supplied publication figures");
 }
 
 if ((html.match(/class="publication-title-link"/g) || []).length !== 13) {
@@ -215,6 +220,20 @@ if (!html.includes('class="hero-portrait"') || html.includes('class="about-profi
   throw new Error("The portrait must appear beside the hero name, not in About");
 }
 
+for (const advisor of [
+  "Academician Wen Gao",
+  "高文院士",
+  "https://cs.pku.edu.cn/info/1008/1093.htm",
+]) {
+  if (!html.includes(advisor)) throw new Error(`Missing updated Ph.D. advisor: ${advisor}`);
+}
+if ((html.match(/Asst\. Prof\. Shanghang Zhang/g) || []).length !== 1) {
+  throw new Error("Shanghang Zhang must remain only as the postdoctoral co-advisor");
+}
+if (!html.includes("timeline-logo-ucas")) {
+  throw new Error("The UCAS logo must use a dedicated smaller-size class");
+}
+
 if (!/class="[^"]*integrated-profile[^"]*"/.test(html) || !html.includes('id="experience"')) {
   throw new Error("About and Experience must be integrated in one early section");
 }
@@ -230,6 +249,12 @@ if (!/\.stat span\s*\{[\s\S]*?font-size:\s*13px/.test(css)) {
 }
 if (!/\.footer-bottom\s*\{[\s\S]*?font-size:\s*11px/.test(css)) {
   throw new Error("Footer copyright and back-to-top text must be enlarged");
+}
+if (!/\.timeline-org\s*\{[\s\S]*?font-size:\s*14px/.test(css)) {
+  throw new Error("Timeline organization names must be enlarged");
+}
+if (!/\.timeline-logo-ucas\s*\{[\s\S]*?width:\s*96px/.test(css)) {
+  throw new Error("The UCAS logo must be slightly smaller than the large timeline logos");
 }
 
 console.log("PASS: integrated profile, visuals, links, logos, Scholar, and publications validated");
