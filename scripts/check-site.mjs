@@ -14,8 +14,8 @@ const required = [
   "assets/logos/pku-seal.svg",
   "assets/logos/nxu.png",
   "assets/logos/ncepu.png",
-  "assets/logos/ucas.svg",
-  "assets/logos/ikingtec.svg",
+  "assets/logos/ucas.png",
+  "assets/logos/ikingtec.png",
   "scripts/update-scholar-snapshot.mjs",
   ".github/workflows/update-scholar-snapshot.yml",
   "assets/research/embodied-safety.png",
@@ -121,6 +121,28 @@ if ((html.match(/class="[^"]*external-link[^"]*"/g) || []).length < 6) {
 
 if (!html.includes('class="email-link"') || !css.includes("text-transform: none")) {
   throw new Error("Lowercase email rendering is not protected");
+}
+
+if (html.includes("ruima@pku.edu.cn") || html.includes("mailto:")) {
+  throw new Error("The public email must be obfuscated with AT");
+}
+if (!html.includes("ruima AT pku.edu.cn")) {
+  throw new Error("The obfuscated public email is missing");
+}
+if (!html.includes("authorized patents") || !html.includes("项已授权发明专利")) {
+  throw new Error("The hero statistics must include authorized patents");
+}
+if ((html.match(/class="timeline-org"/g) || []).length !== 6) {
+  throw new Error("Every timeline entry must show an explicit organization name");
+}
+for (const logoPath of ["assets/logos/ikingtec.png", "assets/logos/ucas.png"]) {
+  if (!html.includes(logoPath)) throw new Error(`Missing supplied logo reference: ${logoPath}`);
+}
+if (!html.includes("Visiting collaborator: mmlab@NTU")) {
+  throw new Error("The CSC visiting-collaborator wording is outdated");
+}
+if (html.indexOf('<div class="hero-links">') > html.indexOf('<div class="hero-actions">')) {
+  throw new Error("Hero profile links must appear above Explore publications");
 }
 
 if (!css.includes("white-space: nowrap")) {

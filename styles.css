@@ -254,8 +254,8 @@ body[data-language="zh"] .lang-en {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.62fr);
-  gap: 64px;
+  grid-template-columns: minmax(0, 1.18fr) minmax(250px, 0.48fr);
+  gap: 56px;
   align-items: center;
 }
 
@@ -334,7 +334,7 @@ body[data-language="zh"] .lang-en {
 }
 
 .hero-actions {
-  margin-top: 34px;
+  margin-top: 20px;
 }
 
 .button {
@@ -371,14 +371,20 @@ body[data-language="zh"] .lang-en {
 }
 
 .hero-links {
-  gap: 24px;
+  gap: 22px;
   margin-top: 24px;
 }
 
-.hero-links a {
-  color: var(--muted);
+.hero-links a,
+.hero-links .email-link {
+  color: var(--teal);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero-links a:hover {
+  color: var(--blue);
 }
 
 .email-link {
@@ -390,8 +396,8 @@ body[data-language="zh"] .lang-en {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 390px;
-  padding: 38px;
+  min-height: 340px;
+  padding: 28px;
   border: 1px solid rgba(0, 117, 222, 0.12);
   border-radius: 28px;
   background:
@@ -425,8 +431,8 @@ body[data-language="zh"] .lang-en {
 .scholar-card {
   position: relative;
   z-index: 2;
-  width: min(100%, 340px);
-  padding: 12px;
+  width: min(100%, 240px);
+  padding: 10px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: #fff;
@@ -434,10 +440,10 @@ body[data-language="zh"] .lang-en {
 }
 
 .scholar-card-head {
-  padding: 3px 3px 12px;
+  padding: 2px 2px 9px;
   color: var(--blue);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 8px;
   letter-spacing: 0.04em;
 }
 
@@ -449,9 +455,9 @@ body[data-language="zh"] .lang-en {
 }
 
 .scholar-card p {
-  margin: 10px 3px 2px;
+  margin: 8px 2px 1px;
   color: var(--quiet);
-  font-size: 11px;
+  font-size: 9px;
 }
 
 .stats {
@@ -957,8 +963,16 @@ body[data-language="zh"] .lang-en {
   letter-spacing: 0.06em;
 }
 
+.timeline-org {
+  margin-top: 9px !important;
+  color: var(--blue-dark) !important;
+  font-size: 12px !important;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
 .timeline h3 {
-  margin: 10px 0 8px;
+  margin: 3px 0 8px;
   font-size: 19px;
   font-weight: 700;
   letter-spacing: -0.015em;
@@ -1206,7 +1220,7 @@ body[data-language="zh"] .lang-en {
   }
 
   .hero-visual {
-    min-height: 380px;
+    min-height: 320px;
   }
 
   .stats {
@@ -1293,7 +1307,7 @@ body[data-language="zh"] .lang-en {
 
   .hero-visual {
     min-height: auto;
-    padding: 34px 22px;
+    padding: 28px 18px;
   }
 
   .hero-visual::before {
