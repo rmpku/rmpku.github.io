@@ -49,6 +49,34 @@ if (/\b(under review|submitted|审稿中|投稿中)\b/i.test(publicationBlock)) 
   throw new Error("Publication list includes a submitted or under-review entry");
 }
 
+const publicationYears = [
+  ...publicationBlock.matchAll(/publication-meta"><span>(\d{4})<\/span>/g),
+].map((match) => Number(match[1]));
+if (publicationYears.some((year, index) => index > 0 && year > publicationYears[index - 1])) {
+  throw new Error(`Publications are not reverse chronological: ${publicationYears.join(", ")}`);
+}
+
+const honorList = html.match(/<div class="honor-list">([\s\S]*?)<\/div>\s*<aside class="funding-panel/)?.[1];
+const fundingPanel = html.match(/<aside class="funding-panel reveal">([\s\S]*?)<\/aside>/)?.[1];
+const heroLinks = html.match(/<div class="hero-links">([\s\S]*?)<\/div>/)?.[1];
+if (!honorList || !fundingPanel || !heroLinks) {
+  throw new Error("Could not locate honor, funding, or hero-link regions");
+}
+for (const fundingName of ["China Scholarship Council", "Outstanding Youth Program"]) {
+  if (!fundingPanel.includes(fundingName) || honorList.includes(fundingName)) {
+    throw new Error(`${fundingName} must appear in Funding only`);
+  }
+}
+for (const profileUrl of [
+  "https://github.com/rmpku",
+  "https://scholar.google.com.hk/citations?user=IJTYZlUAAAAJ&hl=en",
+]) {
+  if (!heroLinks.includes(profileUrl)) throw new Error(`Missing top profile link: ${profileUrl}`);
+}
+if (html.includes("hero-name-zh")) {
+  throw new Error("The Chinese name must be removed from the hero");
+}
+
 for (const id of ["about", "research", "publications", "patents", "experience", "honors", "service"]) {
   if (!html.includes(`id="${id}"`)) throw new Error(`Missing section #${id}`);
 }

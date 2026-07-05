@@ -36,4 +36,6 @@ presented as a reverse-chronological timeline. Advisor homepages use compact ext
 icons, every publication title links to its Scholar record or exact Scholar search, and
 each paper includes a replaceable figure slot for future experiment screenshots. The
 patent section lists seven granted Chinese invention patents with grant publication
-numbers, authorization dates, bilingual titles, and external patent records.
+numbers, authorization dates, bilingual titles, and external patent records. Publications
+are displayed in reverse chronological order; fellowships and research grants are kept in
+the Funding column, while GitHub and Google Scholar links remain in the hero.

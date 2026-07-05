@@ -254,8 +254,8 @@ body[data-language="zh"] .lang-en {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.78fr);
-  gap: 88px;
+  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.62fr);
+  gap: 64px;
   align-items: center;
 }
 
@@ -285,13 +285,13 @@ body[data-language="zh"] .lang-en {
 .hero-identity {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
   margin-top: 30px;
 }
 
 .hero-portrait {
-  width: 132px;
-  height: 158px;
+  width: 126px;
+  height: 150px;
   border: 1px solid var(--line);
   border-radius: 14px;
   object-fit: cover;
@@ -300,10 +300,10 @@ body[data-language="zh"] .lang-en {
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(72px, 9vw, 120px);
+  font-size: clamp(54px, 6.4vw, 82px);
   font-weight: 700;
-  line-height: 0.82;
-  letter-spacing: -0.075em;
+  line-height: 0.86;
+  letter-spacing: -0.065em;
 }
 
 .hero h1 span {
@@ -312,14 +312,6 @@ body[data-language="zh"] .lang-en {
 
 .hero h1 span:last-child {
   color: var(--blue);
-}
-
-.hero-name-zh {
-  margin: 20px 0 0;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 14px;
-  letter-spacing: 0.42em;
 }
 
 .hero-lead {
@@ -398,8 +390,8 @@ body[data-language="zh"] .lang-en {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 500px;
-  padding: 56px;
+  min-height: 390px;
+  padding: 38px;
   border: 1px solid rgba(0, 117, 222, 0.12);
   border-radius: 28px;
   background:
@@ -433,8 +425,8 @@ body[data-language="zh"] .lang-en {
 .scholar-card {
   position: relative;
   z-index: 2;
-  width: min(100%, 420px);
-  padding: 14px;
+  width: min(100%, 340px);
+  padding: 12px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: #fff;
@@ -467,7 +459,7 @@ body[data-language="zh"] .lang-en {
   z-index: 3;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: 96px;
+  margin-top: 72px;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: var(--paper);
@@ -532,13 +524,13 @@ body[data-language="zh"] .lang-en {
 
 .split-layout {
   display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  gap: 90px;
+  grid-template-columns: 0.62fr 1.38fr;
+  gap: 64px;
 }
 
 .experience-block {
-  padding-top: 104px;
-  margin-top: 104px;
+  padding-top: 56px;
+  margin-top: 48px;
   border-top: 1px solid var(--line);
   scroll-margin-top: 88px;
 }
@@ -550,8 +542,9 @@ body[data-language="zh"] .lang-en {
 
 .prose .large-copy {
   color: var(--ink);
-  font-size: clamp(21px, 2.25vw, 30px);
-  line-height: 1.48;
+  margin: 0;
+  font-size: clamp(19px, 1.9vw, 25px);
+  line-height: 1.5;
 }
 
 .external-link {
@@ -580,24 +573,6 @@ body[data-language="zh"] .lang-en {
 
 .external-link:hover {
   color: var(--blue);
-}
-
-.inline-note {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 22px;
-  margin-top: 38px;
-  padding: 18px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--paper-blue);
-  font-family: var(--mono);
-  font-size: 11px;
-}
-
-.note-label {
-  color: var(--blue);
-  font-weight: 600;
 }
 
 .research-grid {
@@ -947,6 +922,16 @@ body[data-language="zh"] .lang-en {
   object-fit: contain;
 }
 
+.timeline-logo-large {
+  width: 116px;
+  height: 78px;
+  padding: 0;
+}
+
+.timeline-logo-large img {
+  max-height: 74px;
+}
+
 .timeline-date {
   padding-top: 10px;
   color: var(--blue);
@@ -1221,7 +1206,7 @@ body[data-language="zh"] .lang-en {
   }
 
   .hero-visual {
-    min-height: 470px;
+    min-height: 380px;
   }
 
   .stats {
@@ -1279,7 +1264,7 @@ body[data-language="zh"] .lang-en {
   }
 
   .hero h1 {
-    font-size: clamp(66px, 23vw, 92px);
+    font-size: clamp(48px, 17vw, 68px);
   }
 
   .hero-identity {
@@ -1308,7 +1293,7 @@ body[data-language="zh"] .lang-en {
 
   .hero-visual {
     min-height: auto;
-    padding: 42px 24px;
+    padding: 34px 22px;
   }
 
   .hero-visual::before {
