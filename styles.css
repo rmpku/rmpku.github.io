@@ -329,8 +329,8 @@ body[data-language="zh"] .lang-en {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(250px, 0.48fr);
-  gap: 56px;
+  grid-template-columns: minmax(0, 1.26fr) minmax(220px, 0.36fr);
+  gap: 48px;
   align-items: center;
 }
 
@@ -381,7 +381,7 @@ body[data-language="zh"] .lang-en {
   border-radius: 16px;
   object-fit: cover;
   box-shadow: 0 14px 34px rgba(25, 88, 151, 0.1);
-  animation: float-world 6.8s ease-in-out infinite;
+  animation: float-world 5.6s ease-in-out infinite;
 }
 
 .hero h1 {
@@ -482,10 +482,10 @@ body[data-language="zh"] .lang-en {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 340px;
-  padding: 28px;
+  min-height: 300px;
+  padding: 22px;
   border: 1px solid rgba(0, 117, 222, 0.12);
-  border-radius: 28px;
+  border-radius: 24px;
   background:
     linear-gradient(135deg, transparent 0 47%, rgba(0, 117, 222, 0.08) 47% 47.3%, transparent 47.3%),
     var(--paper-blue);
@@ -517,8 +517,8 @@ body[data-language="zh"] .lang-en {
 .scholar-card {
   position: relative;
   z-index: 2;
-  width: min(100%, 240px);
-  padding: 10px;
+  width: min(100%, 210px);
+  padding: 8px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: #fff;
@@ -1302,11 +1302,11 @@ body[data-language="zh"] .lang-en {
 @keyframes float-world {
   0%,
   100% {
-    transform: translateY(0) rotate(0);
+    transform: translateX(-6px) rotate(-0.3deg);
   }
 
   50% {
-    transform: translateY(-6px) rotate(0.35deg);
+    transform: translateX(6px) rotate(0.3deg);
   }
 }
 
@@ -1374,7 +1374,7 @@ body[data-language="zh"] .lang-en {
   }
 
   .hero-visual {
-    min-height: 320px;
+    min-height: 280px;
   }
 
   .stats {

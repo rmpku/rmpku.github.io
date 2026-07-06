@@ -275,5 +275,18 @@ if (!css.includes("--reveal-delay") || !css.includes("transition-delay: var(--re
 if (!/\.publication-meta span:nth-child\(2\)\s*\{[\s\S]*?font-size:\s*11px/.test(css)) {
   throw new Error("Publication venue names must be enlarged by two pixels");
 }
+if (!html.includes("感兴趣就踢踢我~") || html.includes("研究因交流而更有意思。")) {
+  throw new Error("The Chinese footer invitation must use the requested wording");
+}
+const worldMotion = css.match(/@keyframes float-world\s*\{([\s\S]*?)\n\}/)?.[1] || "";
+if (!worldMotion.includes("translateX(")) {
+  throw new Error("The world-model visual must drift horizontally");
+}
+if (!/\.scholar-card\s*\{[\s\S]*?width:\s*min\(100%,\s*210px\)/.test(css)) {
+  throw new Error("The Scholar card must be reduced to 210px");
+}
+if (!/\.hero-visual\s*\{[\s\S]*?min-height:\s*300px/.test(css)) {
+  throw new Error("The Scholar visual region must be reduced to 300px");
+}
 
 console.log("PASS: integrated profile, visuals, links, logos, Scholar, and publications validated");
