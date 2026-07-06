@@ -179,34 +179,109 @@ body[data-language="zh"] .lang-en {
 }
 
 .nav-links a {
+  --nav-accent: var(--blue);
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
   color: var(--muted);
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.nav-links a::before {
+  width: 7px;
+  height: 7px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--nav-accent) 22%, white);
+  color: var(--nav-accent);
+  content: "";
+  opacity: 0.68;
+  transform: rotate(45deg) scale(0.82);
+  transition: opacity 180ms ease, transform 180ms ease, background 180ms ease;
+}
+
+.nav-links a:nth-child(1) {
+  --nav-accent: #2a9d8f;
+}
+
+.nav-links a:nth-child(2) {
+  --nav-accent: #1877d2;
+}
+
+.nav-links a:nth-child(3) {
+  --nav-accent: #7467c7;
+}
+
+.nav-links a:nth-child(4) {
+  --nav-accent: #d58a23;
+}
+
+.nav-links a:nth-child(5) {
+  --nav-accent: #d96958;
+}
+
+.nav-links a:nth-child(6) {
+  --nav-accent: #b85c91;
 }
 
 .nav-links a:hover,
 .nav-links a.is-active {
-  color: var(--ink);
+  color: var(--nav-accent);
+  transform: translateY(-1px);
+}
+
+.nav-links a:hover::before,
+.nav-links a.is-active::before {
+  background: var(--nav-accent);
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
 }
 
 .language-switch {
-  gap: 7px;
+  width: fit-content;
+  gap: 3px;
+  padding: 3px 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
   color: #bbb6b0;
+  background: rgba(247, 250, 252, 0.88);
   font-family: var(--mono);
   font-size: 11px;
 }
 
+.language-icon {
+  width: 14px;
+  height: 14px;
+  margin: 0 3px 0 2px;
+  fill: none;
+  stroke: var(--teal);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.15;
+}
+
 .language-switch button {
-  padding: 3px;
+  padding: 4px 7px;
   color: var(--muted);
   border: 0;
-  background: none;
+  border-radius: 999px;
+  background: transparent;
   cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.language-switch button:hover {
+  color: var(--ink);
+  background: rgba(0, 117, 222, 0.06);
 }
 
 .language-switch button[aria-pressed="true"] {
   color: var(--blue);
+  background: rgba(0, 117, 222, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(0, 117, 222, 0.08);
   font-weight: 700;
 }
 
@@ -306,6 +381,7 @@ body[data-language="zh"] .lang-en {
   border-radius: 16px;
   object-fit: cover;
   box-shadow: 0 14px 34px rgba(25, 88, 151, 0.1);
+  animation: float-world 6.8s ease-in-out infinite;
 }
 
 .hero h1 {
@@ -447,6 +523,7 @@ body[data-language="zh"] .lang-en {
   border-radius: 14px;
   background: #fff;
   box-shadow: var(--soft-shadow);
+  animation: float-scholar 8s ease-in-out infinite;
 }
 
 .scholar-card-head {
@@ -746,6 +823,8 @@ body[data-language="zh"] .lang-en {
   width: calc(100% - 14px);
   height: calc(100% - 14px);
   object-fit: contain;
+  transform-origin: center;
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .publication-figure-image-square {
@@ -768,6 +847,16 @@ body[data-language="zh"] .lang-en {
   color: var(--blue);
   font-size: 14px;
   font-weight: 700;
+}
+
+.publication-meta span:nth-child(2) {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.publication:hover .publication-figure-image {
+  transform: scale(1.025);
 }
 
 .publication h3 {
@@ -1194,13 +1283,42 @@ body[data-language="zh"] .lang-en {
 
 .reveal {
   opacity: 0;
+  filter: blur(5px);
   transform: translateY(20px);
-  transition: opacity 480ms ease, transform 480ms ease;
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, filter, transform;
 }
 
 .reveal.is-visible {
   opacity: 1;
+  filter: none;
   transform: none;
+}
+
+@keyframes float-world {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(0.35deg);
+  }
+}
+
+@keyframes float-scholar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 @keyframes blink {
@@ -1533,6 +1651,7 @@ body[data-language="zh"] .lang-en {
 
   .reveal {
     opacity: 1;
+    filter: none;
     transform: none;
   }
 }

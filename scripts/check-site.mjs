@@ -148,8 +148,12 @@ if (!html.includes("ruima AT pku.edu.cn")) {
 if (!html.includes("authorized patents") || !html.includes("项已授权发明专利")) {
   throw new Error("The hero statistics must include authorized patents");
 }
-if (!html.includes('id="scholar-citations-count"') || !html.includes("Google Scholar citations")) {
-  throw new Error("The hero statistics must include the weekly Scholar citation count");
+if (
+  !html.includes('id="scholar-citations-count"') ||
+  !html.includes('<span class="lang lang-en">Google Scholar</span>') ||
+  html.includes("Google Scholar citations · weekly")
+) {
+  throw new Error("The hero statistics must use the simplified Google Scholar label");
 }
 if (!html.includes('class="world-model-visual"')) {
   throw new Error("The hero must include the generated world-model visual");
@@ -223,9 +227,12 @@ if (!html.includes('class="hero-portrait"') || html.includes('class="about-profi
 for (const advisor of [
   "Academician Wen Gao",
   "高文院士",
-  "https://cs.pku.edu.cn/info/1008/1093.htm",
+  "https://idm.pku.edu.cn/info/1017/1041.htm",
 ]) {
   if (!html.includes(advisor)) throw new Error(`Missing updated Ph.D. advisor: ${advisor}`);
+}
+if (html.includes("https://cs.pku.edu.cn/info/1008/1093.htm")) {
+  throw new Error("The previous Wen Gao profile URL must be removed");
 }
 if ((html.match(/Asst\. Prof\. Shanghang Zhang/g) || []).length !== 1) {
   throw new Error("Shanghang Zhang must remain only as the postdoctoral co-advisor");
@@ -255,6 +262,18 @@ if (!/\.timeline-org\s*\{[\s\S]*?font-size:\s*14px/.test(css)) {
 }
 if (!/\.timeline-logo-ucas\s*\{[\s\S]*?width:\s*96px/.test(css)) {
   throw new Error("The UCAS logo must be slightly smaller than the large timeline logos");
+}
+if (!html.includes('class="language-icon"') || !css.includes(".nav-links a::before")) {
+  throw new Error("Navigation and language controls must include visual markers");
+}
+if (!css.includes("@keyframes float-world") || !css.includes("@keyframes float-scholar")) {
+  throw new Error("The page must include subtle ambient motion");
+}
+if (!css.includes("--reveal-delay") || !css.includes("transition-delay: var(--reveal-delay")) {
+  throw new Error("Grouped reveal animations must be staggered");
+}
+if (!/\.publication-meta span:nth-child\(2\)\s*\{[\s\S]*?font-size:\s*11px/.test(css)) {
+  throw new Error("Publication venue names must be enlarged by two pixels");
 }
 
 console.log("PASS: integrated profile, visuals, links, logos, Scholar, and publications validated");

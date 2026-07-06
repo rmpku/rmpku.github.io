@@ -49,6 +49,18 @@
     getSavedLanguage() || (navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en");
   setLanguage(initialLanguage);
 
+  document
+    .querySelectorAll(
+      ".research-grid, .publication-list, .patent-list, .honor-list, .chronological-timeline",
+    )
+    .forEach((group) => {
+      [...group.children]
+        .filter((element) => element.classList.contains("reveal"))
+        .forEach((element, index) => {
+          element.style.setProperty("--reveal-delay", `${(index % 4) * 70}ms`);
+        });
+    });
+
   function setMenuOpen(open) {
     if (!menu || !menuToggle) return;
     menu.classList.toggle("is-open", open);
