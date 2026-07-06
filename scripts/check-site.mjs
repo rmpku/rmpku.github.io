@@ -183,6 +183,13 @@ if (
 if (!html.includes('class="world-model-visual"')) {
   throw new Error("The hero must include the generated world-model visual");
 }
+if (
+  !css.includes("width: min(264px, 36%);") ||
+  !css.includes("height: 180px;") ||
+  !css.includes("translate: -20% 0;")
+) {
+  throw new Error("The world-model visual must be enlarged by 20% and shifted left by 20%");
+}
 if (!html.includes('src="assets/world-model-visual-v2.png"')) {
   throw new Error("The hero must use the simplified mathematical world-model visual");
 }

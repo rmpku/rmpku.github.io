@@ -374,8 +374,8 @@ body[data-language="zh"] .lang-en {
 }
 
 .world-model-visual {
-  width: min(220px, 30%);
-  height: 150px;
+  width: min(264px, 36%);
+  height: 180px;
   margin-left: auto;
   border: 0;
   border-radius: 0;
@@ -383,6 +383,7 @@ body[data-language="zh"] .lang-en {
   object-fit: cover;
   box-shadow: none;
   mix-blend-mode: multiply;
+  translate: -20% 0;
   -webkit-mask-image: radial-gradient(ellipse 86% 82% at center, #000 58%, transparent 100%);
   mask-image: radial-gradient(ellipse 86% 82% at center, #000 58%, transparent 100%);
   animation: float-world 3.8s ease-in-out infinite;
@@ -1469,8 +1470,9 @@ body[data-language="zh"] .lang-en {
 
   .world-model-visual {
     grid-column: 1 / -1;
-    width: 100%;
-    height: 150px;
+    width: 120%;
+    max-width: none;
+    height: 180px;
     margin-left: 0;
     object-position: center;
     animation-name: float-world-mobile;
