@@ -309,5 +309,26 @@ for (const position of ["translateX(-18px)", "translateX(18px)"]) {
     throw new Error(`The world-model motion range is too small: ${position}`);
   }
 }
+if (
+  html.includes("Google Scholar 引用 · 每周更新") ||
+  !html.includes('<span class="lang lang-zh" lang="zh-CN">Google Scholar</span>')
+) {
+  throw new Error("The Chinese Scholar statistic label must be simplified");
+}
+if (html.includes("谢晓东研究员") || !html.includes("解晓东研究员")) {
+  throw new Error("The Chinese advisor name must be 解晓东研究员");
+}
+for (const degreeText of [
+  "Ph.D. · Computer Science · Computer Vision &amp; Information Security",
+  "博士 · 计算机 · 计算机视觉与信息安全方向",
+  "M.S. · Physics · Optical Imaging &amp; Information Hiding",
+  "硕士 · 物理学 · 光学成像与信息隐藏方向",
+  "B.E. · Automation · Measurement &amp; Control Technology and Instrumentation",
+  "学士 · 自动化 · 测控技术与仪器方向",
+]) {
+  if (!html.includes(degreeText)) {
+    throw new Error(`Missing updated bilingual education field: ${degreeText}`);
+  }
+}
 
 console.log("PASS: integrated profile, visuals, links, logos, Scholar, and publications validated");
