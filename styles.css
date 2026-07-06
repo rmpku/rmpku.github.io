@@ -377,11 +377,15 @@ body[data-language="zh"] .lang-en {
   width: min(220px, 30%);
   height: 150px;
   margin-left: auto;
-  border: 1px solid rgba(0, 117, 222, 0.12);
-  border-radius: 16px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   object-fit: cover;
-  box-shadow: 0 14px 34px rgba(25, 88, 151, 0.1);
-  animation: float-world 5.6s ease-in-out infinite;
+  box-shadow: none;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(ellipse 86% 82% at center, #000 58%, transparent 100%);
+  mask-image: radial-gradient(ellipse 86% 82% at center, #000 58%, transparent 100%);
+  animation: float-world 3.8s ease-in-out infinite;
 }
 
 .hero h1 {
@@ -1302,11 +1306,22 @@ body[data-language="zh"] .lang-en {
 @keyframes float-world {
   0%,
   100% {
-    transform: translateX(-6px) rotate(-0.3deg);
+    transform: translateX(-18px) rotate(-0.55deg);
   }
 
   50% {
-    transform: translateX(6px) rotate(0.3deg);
+    transform: translateX(18px) rotate(0.55deg);
+  }
+}
+
+@keyframes float-world-mobile {
+  0%,
+  100% {
+    transform: translateX(-10px) rotate(-0.35deg);
+  }
+
+  50% {
+    transform: translateX(10px) rotate(0.35deg);
   }
 }
 
@@ -1458,6 +1473,7 @@ body[data-language="zh"] .lang-en {
     height: 150px;
     margin-left: 0;
     object-position: center;
+    animation-name: float-world-mobile;
   }
 
   .hero-actions {

@@ -288,5 +288,26 @@ if (!/\.scholar-card\s*\{[\s\S]*?width:\s*min\(100%,\s*210px\)/.test(css)) {
 if (!/\.hero-visual\s*\{[\s\S]*?min-height:\s*300px/.test(css)) {
   throw new Error("The Scholar visual region must be reduced to 300px");
 }
+if (!html.includes('<body id="top"') || html.includes('class="site-header" id="top"')) {
+  throw new Error("The #top anchor must target the document body, not the fixed header");
+}
+const worldRule = css.match(/\.world-model-visual\s*\{([\s\S]*?)\}/)?.[1] || "";
+for (const declaration of [
+  "border: 0",
+  "border-radius: 0",
+  "box-shadow: none",
+  "mix-blend-mode: multiply",
+  "mask-image: radial-gradient",
+  "animation: float-world 3.8s",
+]) {
+  if (!worldRule.includes(declaration)) {
+    throw new Error(`Missing borderless world-model styling: ${declaration}`);
+  }
+}
+for (const position of ["translateX(-18px)", "translateX(18px)"]) {
+  if (!worldMotion.includes(position)) {
+    throw new Error(`The world-model motion range is too small: ${position}`);
+  }
+}
 
 console.log("PASS: integrated profile, visuals, links, logos, Scholar, and publications validated");
