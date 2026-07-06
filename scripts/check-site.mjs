@@ -199,8 +199,16 @@ if ((html.match(/class="timeline-org"/g) || []).length !== 6) {
 for (const logoPath of ["assets/logos/ikingtec.png", "assets/logos/ucas.png"]) {
   if (!html.includes(logoPath)) throw new Error(`Missing supplied logo reference: ${logoPath}`);
 }
-if (!html.includes("Visiting collaborator: mmlab@NTU")) {
-  throw new Error("The CSC visiting-collaborator wording is outdated");
+if (
+  !html.includes("Visiting advisor: mmlab@NTU") ||
+  !html.includes("合作导师：mmlab@NTU") ||
+  html.includes("Visiting collaborator:") ||
+  html.includes("访问合作：")
+) {
+  throw new Error("The CSC advisor wording must be correct in both English and Chinese");
+}
+if (!html.includes(">Prof. Ziwei Liu</a>") || !html.includes(">刘子纬教授</a>")) {
+  throw new Error("The CSC advisor name must be correct in both English and Chinese");
 }
 if (html.indexOf('<div class="hero-links">') > html.indexOf('<div class="hero-actions">')) {
   throw new Error("Hero profile links must appear above Explore publications");
