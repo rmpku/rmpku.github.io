@@ -145,8 +145,33 @@ if (html.includes("ruima@pku.edu.cn") || html.includes("mailto:")) {
 if (!html.includes("ruima AT pku.edu.cn")) {
   throw new Error("The obfuscated public email is missing");
 }
-if (!html.includes("authorized patents") || !html.includes("项已授权发明专利")) {
-  throw new Error("The hero statistics must include authorized patents");
+const expectedHeroStats = [
+  ["Papers", "论文"],
+  ["Focus Areas", "研究方向"],
+  ["Patents", "专利"],
+  ["Honors", "荣誉"],
+];
+for (const [englishLabel, chineseLabel] of expectedHeroStats) {
+  if (
+    !html.includes(`<span class="lang lang-en">${englishLabel}</span>`) ||
+    !html.includes(`<span class="lang lang-zh" lang="zh-CN">${chineseLabel}</span>`)
+  ) {
+    throw new Error(`The hero statistic labels must include ${englishLabel} / ${chineseLabel}`);
+  }
+}
+for (const obsoleteLabel of [
+  "published &amp; accepted papers",
+  "focus areas",
+  "authorized patents",
+  "honors &amp; awards",
+  "篇已发表或录用论文",
+  "个研究方向",
+  "项已授权发明专利",
+  "项荣誉与奖励",
+]) {
+  if (html.includes(obsoleteLabel)) {
+    throw new Error(`The obsolete hero statistic label must be removed: ${obsoleteLabel}`);
+  }
 }
 if (
   !html.includes('id="scholar-citations-count"') ||
