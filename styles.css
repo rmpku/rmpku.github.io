@@ -329,7 +329,7 @@ body[data-language="zh"] .lang-en {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1.26fr) minmax(220px, 0.36fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(440px, 0.88fr);
   gap: 48px;
   align-items: center;
 }
@@ -485,10 +485,10 @@ body[data-language="zh"] .lang-en {
 
 .hero-visual {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
   align-items: center;
-  gap: 14px;
   min-height: 300px;
   padding: 22px;
   border: 1px solid rgba(0, 117, 222, 0.12);
@@ -524,6 +524,7 @@ body[data-language="zh"] .lang-en {
 .scholar-card {
   position: relative;
   z-index: 2;
+  justify-self: end;
   width: min(100%, 210px);
   padding: 8px;
   border: 1px solid var(--line);
@@ -557,6 +558,7 @@ body[data-language="zh"] .lang-en {
 .news-card {
   position: relative;
   z-index: 2;
+  justify-self: start;
   width: min(100%, 360px);
   padding: 15px 16px 13px;
   border: 1px solid rgba(42, 157, 153, 0.2);
@@ -1574,6 +1576,12 @@ body[data-language="zh"] .lang-en {
   .hero-visual {
     min-height: auto;
     padding: 28px 18px;
+    grid-template-columns: 1fr;
+  }
+
+  .news-card,
+  .scholar-card {
+    justify-self: center;
   }
 
   .hero-visual::before {
