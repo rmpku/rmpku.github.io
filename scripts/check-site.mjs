@@ -26,6 +26,7 @@ const required = [
   "assets/research/copyright-authentication.png",
   "assets/research/content-traceability.png",
   "assets/publications/waveface.png",
+  "assets/publications/group-of-latents.png",
   "assets/publications/see-to-act.png",
   "assets/publications/scene-adaptive-crowd-counting.png",
   "assets/publications/enhanced-blind-watermarking.png",
