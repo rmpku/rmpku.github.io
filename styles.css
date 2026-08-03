@@ -488,7 +488,7 @@ body[data-language="zh"] .lang-en {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-  align-items: center;
+  align-items: stretch;
   min-height: 300px;
   padding: 22px;
   border: 1px solid rgba(0, 117, 222, 0.12);
@@ -559,7 +559,7 @@ body[data-language="zh"] .lang-en {
   position: relative;
   z-index: 2;
   justify-self: start;
-  width: min(100%, 360px);
+  width: min(100%, 210px);
   padding: 15px 16px 13px;
   border: 1px solid rgba(42, 157, 153, 0.2);
   border-radius: 14px;
@@ -617,9 +617,11 @@ body[data-language="zh"] .lang-en {
   padding-top: 1px;
   color: var(--blue);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 600;
   line-height: 1.4;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .news-item a {
@@ -1582,6 +1584,10 @@ body[data-language="zh"] .lang-en {
   .news-card,
   .scholar-card {
     justify-self: center;
+  }
+
+  .news-card {
+    min-height: 293px;
   }
 
   .hero-visual::before {
