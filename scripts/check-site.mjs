@@ -26,6 +26,7 @@ const required = [
   "assets/research/copyright-authentication.png",
   "assets/research/content-traceability.png",
   "assets/publications/waveface.png",
+  "assets/publications/safedojo.png",
   "assets/publications/group-of-latents.png",
   "assets/publications/see-to-act.png",
   "assets/publications/scene-adaptive-crowd-counting.png",
@@ -48,14 +49,14 @@ const [html, css] = await Promise.all([
   readFile(join(root, "styles.css"), "utf8"),
 ]);
 const publicationCount = (html.match(/<article class="publication reveal"/g) || []).length;
-if (publicationCount !== 13) {
-  throw new Error(`Expected 13 publications, found ${publicationCount}`);
+if (publicationCount !== 14) {
+  throw new Error(`Expected 14 publications, found ${publicationCount}`);
 }
 
 const journalCount = (html.match(/data-type="journal"/g) || []).length;
 const conferenceCount = (html.match(/data-type="conference"/g) || []).length;
-if (journalCount !== 9 || conferenceCount !== 4) {
-  throw new Error(`Expected 9 journals and 4 conferences, found ${journalCount} and ${conferenceCount}`);
+if (journalCount !== 9 || conferenceCount !== 5) {
+  throw new Error(`Expected 9 journals and 5 conferences, found ${journalCount} and ${conferenceCount}`);
 }
 
 const publicationBlock = html.match(
@@ -223,14 +224,14 @@ if ((html.match(/class="research-visual"/g) || []).length !== 4) {
   throw new Error("Expected four Research Interests visuals");
 }
 
-if ((html.match(/class="publication-figure"/g) || []).length !== 13) {
+if ((html.match(/class="publication-figure"/g) || []).length !== 14) {
   throw new Error("Expected one replaceable figure slot for every publication");
 }
-if ((html.match(/class="[^"]*\bpublication-figure-image\b[^"]*"/g) || []).length !== 13) {
-  throw new Error("Expected thirteen supplied publication figures");
+if ((html.match(/class="[^"]*\bpublication-figure-image\b[^"]*"/g) || []).length !== 14) {
+  throw new Error("Expected fourteen supplied publication figures");
 }
 
-if ((html.match(/class="publication-title-link"/g) || []).length !== 13) {
+if ((html.match(/class="publication-title-link"/g) || []).length !== 14) {
   throw new Error("Expected one publication link for every paper");
 }
 
