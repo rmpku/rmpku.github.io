@@ -145,6 +145,7 @@
   }
 
   const scholarCitationCount = document.querySelector("#scholar-citations-count");
+  const scholarCitationImage = document.querySelector("#scholar-citations-image");
   if (scholarCitationCount) {
     fetch("assets/scholar-stats.json", { cache: "no-store" })
       .then((response) => {
@@ -157,6 +158,10 @@
         scholarCitationCount.textContent = citations.toLocaleString("en-US");
         if (typeof stats.updatedAt === "string") {
           scholarCitationCount.dataset.updatedAt = stats.updatedAt;
+          if (scholarCitationImage) {
+            const snapshotVersion = encodeURIComponent(`${stats.updatedAt}-${citations}`);
+            scholarCitationImage.src = `assets/scholar-citations.png?v=${snapshotVersion}`;
+          }
         }
       })
       .catch(() => {

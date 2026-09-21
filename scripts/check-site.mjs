@@ -91,6 +91,7 @@ for (const fundingName of ["China Scholarship Council", "Outstanding Youth Progr
 for (const fundingText of [
   "Brain Science and Brain-Inspired Research",
   "2026ZD0221700",
+  "2026.09",
   "CORE MEMBER",
   "课题骨干",
 ]) {
@@ -190,10 +191,12 @@ for (const obsoleteLabel of [
 }
 if (
   !html.includes('id="scholar-citations-count"') ||
+  !html.includes('id="scholar-citations-image"') ||
+  !html.includes('src="assets/scholar-citations.png?v=2026-09-21-361"') ||
   !html.includes('<span class="lang lang-en">Google Scholar</span>') ||
   html.includes("Google Scholar citations · weekly")
 ) {
-  throw new Error("The hero statistics must use the simplified Google Scholar label");
+  throw new Error("The hero must use the current versioned Google Scholar snapshot and label");
 }
 if (!html.includes('class="world-model-visual"')) {
   throw new Error("The hero must include the generated world-model visual");
@@ -215,8 +218,9 @@ for (const logoPath of ["assets/logos/ikingtec.png", "assets/logos/ucas.png"]) {
   if (!html.includes(logoPath)) throw new Error(`Missing supplied logo reference: ${logoPath}`);
 }
 if (
-  !html.includes("Visiting advisor: mmlab@NTU") ||
-  !html.includes("合作导师：mmlab@NTU") ||
+  !html.includes("Visiting advisor:") ||
+  !html.includes("MMLab, Nanyang Technological University, Singapore") ||
+  !html.includes("访问合作导师：新加坡南洋理工大学 MMLab") ||
   html.includes("Visiting collaborator:") ||
   html.includes("访问合作：")
 ) {
@@ -330,8 +334,8 @@ if (!css.includes("--reveal-delay") || !css.includes("transition-delay: var(--re
 if (!/\.publication-meta span:nth-child\(2\)\s*\{[\s\S]*?font-size:\s*11px/.test(css)) {
   throw new Error("Publication venue names must be enlarged by two pixels");
 }
-if (!html.includes("感兴趣就踢踢我~") || html.includes("研究因交流而更有意思。")) {
-  throw new Error("The Chinese footer invitation must use the requested wording");
+if (!html.includes("研究因交流而更有意义。") || html.includes("感兴趣就踢踢我~")) {
+  throw new Error("The Chinese footer invitation must match the English message");
 }
 const worldMotion = css.match(/@keyframes float-world\s*\{([\s\S]*?)\n\}/)?.[1] || "";
 if (!worldMotion.includes("translateX(")) {
@@ -366,16 +370,16 @@ for (const position of ["translateX(-18px)", "translateX(18px)"]) {
 }
 if (
   html.includes("Google Scholar 引用 · 每周更新") ||
-  !html.includes('<span class="lang lang-zh" lang="zh-CN">Google Scholar</span>')
+  !html.includes('<span class="lang lang-zh" lang="zh-CN">谷歌学术</span>')
 ) {
-  throw new Error("The Chinese Scholar statistic label must be simplified");
+  throw new Error("The Chinese Scholar statistic label must be localized");
 }
 if (html.includes("谢晓东研究员") || !html.includes("解晓东研究员")) {
   throw new Error("The Chinese advisor name must be 解晓东研究员");
 }
 for (const degreeText of [
   "Ph.D. · Computer Science · Computer Vision &amp; Information Security",
-  "博士 · 计算机 · 计算机视觉与信息安全方向",
+  "博士 · 计算机科学 · 计算机视觉与信息安全方向",
   "M.S. · Physics · Optical Imaging &amp; Information Hiding",
   "硕士 · 物理学 · 光学成像与信息隐藏方向",
   "B.E. · Automation · Measurement &amp; Control Technology and Instrumentation",

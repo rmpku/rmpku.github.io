@@ -1212,8 +1212,8 @@ body[data-language="zh"] .lang-en {
   margin-top: 14px;
 }
 
-.timeline-tags span,
-.service-tags span {
+.timeline-tags > span,
+.service-tags > span {
   padding: 5px 8px;
   border: 1px solid var(--line);
   border-radius: 5px;

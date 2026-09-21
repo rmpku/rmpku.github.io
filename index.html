@@ -23,8 +23,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js?v=20260706-2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260921-1" />
+    <script src="script.js?v=20260921-1" defer></script>
   </head>
   <body id="top" data-language="en">
     <a class="skip-link" href="#main-content">
@@ -73,8 +73,8 @@
               <span class="lang lang-zh" lang="zh-CN">经历</span>
             </a>
             <a href="#honors">
-              <span class="lang lang-en">Honors</span>
-              <span class="lang lang-zh" lang="zh-CN">荣誉</span>
+              <span class="lang lang-en">Funding &amp; Honors</span>
+              <span class="lang lang-zh" lang="zh-CN">科研与荣誉</span>
             </a>
           </div>
 
@@ -130,7 +130,10 @@
                 href="https://scholar.google.com.hk/citations?user=IJTYZlUAAAAJ&hl=en"
                 target="_blank"
                 rel="noreferrer"
-              >Google Scholar ↗</a>
+              >
+                <span class="lang lang-en">Google Scholar ↗</span>
+                <span class="lang lang-zh" lang="zh-CN">谷歌学术 ↗</span>
+              </a>
             </div>
 
             <div class="hero-actions">
@@ -173,7 +176,7 @@
                 <span class="live-dot" aria-hidden="true"></span>
                 <h2 id="news-card-title">
                   <span class="lang lang-en">LATEST / NEWS</span>
-                  <span class="lang lang-zh" lang="zh-CN">近期动态 / NEWS</span>
+                  <span class="lang lang-zh" lang="zh-CN">近期动态</span>
                 </h2>
               </div>
               <!-- Add the newest update at the top of this list when the site changes. -->
@@ -189,7 +192,7 @@
                   <time datetime="2026-07">2026.07</time>
                   <a href="#publications">
                     <span class="lang lang-en">Two papers have been accepted to ACM Multimedia 2026.</span>
-                    <span class="lang lang-zh" lang="zh-CN">两篇 MM26 论文已被接收。</span>
+                    <span class="lang lang-zh" lang="zh-CN">两篇论文被 ACM Multimedia 2026 接收。</span>
                   </a>
                 </li>
                 <li class="news-item">
@@ -205,7 +208,8 @@
             <aside class="scholar-card">
               <div class="scholar-card-head">
                 <span class="live-dot" aria-hidden="true"></span>
-                <span>GOOGLE SCHOLAR / CURRENT</span>
+                <span class="lang lang-en">GOOGLE SCHOLAR / CURRENT</span>
+                <span class="lang lang-zh" lang="zh-CN">谷歌学术 / 当前数据</span>
               </div>
               <a
                 href="https://scholar.google.com.hk/citations?user=IJTYZlUAAAAJ&hl=en"
@@ -214,7 +218,8 @@
                 aria-label="Open Rui Ma's Google Scholar profile"
               >
                 <img
-                  src="assets/scholar-citations.png"
+                  id="scholar-citations-image"
+                  src="assets/scholar-citations.png?v=2026-09-21-361"
                   alt="Current Google Scholar citation snapshot for Rui Ma"
                 />
               </a>
@@ -250,7 +255,7 @@
           <div class="stat stat-citations">
             <strong id="scholar-citations-count">361</strong>
             <span class="lang lang-en">Google Scholar</span>
-            <span class="lang lang-zh" lang="zh-CN">Google Scholar</span>
+            <span class="lang lang-zh" lang="zh-CN">谷歌学术</span>
           </div>
         </div>
       </section>
@@ -258,7 +263,7 @@
       <section class="section section-light integrated-profile" id="about">
         <div class="shell split-layout">
           <div class="section-heading reveal">
-            <p class="section-index">01 / ABOUT</p>
+            <p class="section-index"><span class="lang lang-en">01 / ABOUT</span><span class="lang lang-zh" lang="zh-CN">01 / 个人简介</span></p>
             <h2>
               <span class="lang lang-en">About</span>
               <span class="lang lang-zh" lang="zh-CN">个人简介</span>
@@ -281,7 +286,7 @@
 
         <div class="shell experience-block" id="experience">
           <div class="section-heading reveal">
-            <p class="section-index">02 / EXPERIENCE</p>
+            <p class="section-index"><span class="lang lang-en">02 / EXPERIENCE</span><span class="lang lang-zh" lang="zh-CN">02 / 工作与教育</span></p>
             <h2>
               <span class="lang lang-en">Experience &amp; Education</span>
               <span class="lang lang-zh" lang="zh-CN">工作与教育经历</span>
@@ -303,7 +308,11 @@
                   <span class="lang lang-en">Co-advisor: <a class="external-link" href="https://www.ai.pku.edu.cn/info/1139/2918.htm" target="_blank" rel="noreferrer">Asst. Prof. Shanghang Zhang</a></span>
                   <span class="lang lang-zh" lang="zh-CN">合作导师：<a class="external-link" href="https://www.ai.pku.edu.cn/info/1139/2918.htm" target="_blank" rel="noreferrer">仉尚航助理教授</a></span>
                 </p>
-                <div class="timeline-tags"><span>Embodied AI</span><span>Multimodal Trust</span><span>Content Security</span></div>
+                <div class="timeline-tags">
+                  <span><span class="lang lang-en">Embodied AI</span><span class="lang lang-zh" lang="zh-CN">具身智能</span></span>
+                  <span><span class="lang lang-en">Multimodal Trust</span><span class="lang lang-zh" lang="zh-CN">多模态可信</span></span>
+                  <span><span class="lang lang-en">Content Security</span><span class="lang lang-zh" lang="zh-CN">内容安全</span></span>
+                </div>
               </div>
             </li>
             <li class="reveal">
@@ -330,11 +339,11 @@
                 <p class="timeline-org"><span class="lang lang-en">Yunsheng Intelligent Technology Co., Ltd.</span><span class="lang lang-zh" lang="zh-CN">云圣智能科技有限公司</span></p>
                 <h3>
                   <span class="lang lang-en">AI Algorithm Researcher &amp; Research Intern</span>
-                  <span class="lang lang-zh" lang="zh-CN">AI 算法研究员、研究实习生</span>
+                  <span class="lang lang-zh" lang="zh-CN">人工智能算法研究员、研究实习生</span>
                 </h3>
                 <p>
                   <span class="lang lang-en">Full-time and internship roles · End-to-end autonomous flight for quadrotor drones under the VLA framework</span>
-                  <span class="lang lang-zh" lang="zh-CN">历任正式 AI 算法研究员与研究实习生 · 面向四旋翼无人机的 VLA 端到端自主飞行研究</span>
+                  <span class="lang lang-zh" lang="zh-CN">历任人工智能算法研究员与研究实习生 · 基于视觉—语言—动作（VLA）框架开展四旋翼无人机端到端自主飞行研究</span>
                 </p>
               </div>
             </li>
@@ -346,7 +355,7 @@
                 <p class="timeline-org"><span class="lang lang-en">Peking University</span><span class="lang lang-zh" lang="zh-CN">北京大学</span></p>
                 <h3>
                   <span class="lang lang-en">Ph.D. · Computer Science · Computer Vision &amp; Information Security</span>
-                  <span class="lang lang-zh" lang="zh-CN">博士 · 计算机 · 计算机视觉与信息安全方向</span>
+                  <span class="lang lang-zh" lang="zh-CN">博士 · 计算机科学 · 计算机视觉与信息安全方向</span>
                 </h3>
                 <p>
                   <span class="lang lang-en">Advisors: <a class="external-link" href="https://eecs.pku.edu.cn/xxkxjsxy/info/1503/6701.htm" target="_blank" rel="noreferrer">Dr. Xiaodong Xie</a> and <a class="external-link" href="https://idm.pku.edu.cn/info/1017/1041.htm" target="_blank" rel="noreferrer">Academician Wen Gao</a></span>
@@ -389,7 +398,7 @@
       <section class="section research-section" id="research">
         <div class="shell">
           <div class="section-heading reveal">
-            <p class="section-index">03 / RESEARCH</p>
+            <p class="section-index"><span class="lang lang-en">03 / RESEARCH</span><span class="lang lang-zh" lang="zh-CN">03 / 研究方向</span></p>
             <h2>
               <span class="lang lang-en">Research Interests</span>
               <span class="lang lang-zh" lang="zh-CN">研究方向</span>
@@ -422,7 +431,7 @@
               <div class="card-glyph" aria-hidden="true">◫</div>
               <h3>
                 <span class="lang lang-en">Trustworthy Multimodal Models</span>
-                <span class="lang lang-zh" lang="zh-CN">可信多模态大模型</span>
+                <span class="lang lang-zh" lang="zh-CN">可信多模态模型</span>
               </h3>
               <p>
                 <span class="lang lang-en">
@@ -440,7 +449,7 @@
               <span class="card-number">R/03</span>
               <div class="card-glyph" aria-hidden="true">◇</div>
               <h3>
-                <span class="lang lang-en">Copyright Authentication</span>
+                <span class="lang lang-en">Copyright Authentication &amp; Watermarking</span>
                 <span class="lang lang-zh" lang="zh-CN">版权认证与水印</span>
               </h3>
               <p>
@@ -468,7 +477,7 @@
                   images, video, and generative systems.
                 </span>
                 <span class="lang lang-zh" lang="zh-CN">
-                  面向合成图像、视频与生成系统的归因、来源证明和取证信号。
+                  面向合成图像、视频与生成系统的归因、来源追踪与取证信号。
                 </span>
               </p>
             </article>
@@ -481,7 +490,7 @@
         <div class="shell">
           <div class="publication-header reveal">
             <div class="section-heading">
-              <p class="section-index">04 / PUBLICATIONS</p>
+              <p class="section-index"><span class="lang lang-en">04 / PUBLICATIONS</span><span class="lang lang-zh" lang="zh-CN">04 / 论文成果</span></p>
               <h2>
                 <span class="lang lang-en">Publications</span>
                 <span class="lang lang-zh" lang="zh-CN">论文成果</span>
@@ -491,7 +500,7 @@
                   A selection of representative published and formally accepted papers; the full publication count follows Google Scholar.
                 </span>
                 <span class="lang lang-zh" lang="zh-CN">
-                  以下仅展示部分代表性论文；首页论文总数以 Google Scholar 为准。
+                  以下仅展示部分代表性论文；首页论文总数以谷歌学术为准。
                 </span>
               </p>
             </div>
@@ -514,53 +523,53 @@
           <div class="publication-list" aria-live="polite">
             <article class="publication reveal" data-type="conference">
               <div class="publication-figure"><img class="publication-figure-image" src="assets/publications/safedojo.png" alt="SafeDojo interactive world model and constrained reinforcement learning pipeline" loading="lazy" /></div>
-              <div class="publication-meta"><span>2026</span><span>CoRL</span><span>CONFERENCE</span></div>
+              <div class="publication-meta"><span>2026</span><span>CoRL</span><span class="lang lang-en">CONFERENCE</span><span class="lang lang-zh" lang="zh-CN">会议</span></div>
               <h3><a class="publication-title-link" href="https://arxiv.org/abs/2606.20698" target="_blank" rel="noreferrer">SafeDojo: Safe Reinforcement Learning for VLA via Interactive World Model <span aria-hidden="true">↗</span></a></h3>
               <p>K. Tang, P. Jia, Z. Chu, J. Wu, <strong>R. Ma</strong>, J. Cao, F. Zhao, S. Chen, Y. Guo, X. Chi, C.-K. Fan, K. Zhang, J. Xu, F. Yang, W. Mi, X. Ju, J. Tang, S. Zhang</p>
-              <p class="publication-detail">Accepted to CoRL 2026 · arXiv:2606.20698</p>
+              <p class="publication-detail"><span class="lang lang-en">Accepted to CoRL 2026 · arXiv:2606.20698</span><span class="lang lang-zh" lang="zh-CN">被 CoRL 2026 接收 · arXiv:2606.20698</span></p>
             </article>
 
             <article class="publication reveal" data-type="conference">
               <div class="publication-figure"><img class="publication-figure-image" src="assets/publications/group-of-latents.png" alt="Method overview figure from Group-of-Latents" loading="lazy" /></div>
-              <div class="publication-meta"><span>2026</span><span>ACM MULTIMEDIA</span><span>CONFERENCE</span></div>
+              <div class="publication-meta"><span>2026</span><span>ACM MULTIMEDIA</span><span class="lang lang-en">CONFERENCE</span><span class="lang lang-zh" lang="zh-CN">会议</span></div>
               <h3><a class="publication-title-link" href="https://arxiv.org/abs/2607.19437" target="_blank" rel="noreferrer">Group-of-Latents: Perceptual Video Compression at Extreme Bitrates via Masked Latent Generative Modeling <span aria-hidden="true">↗</span></a></h3>
               <p>S. Wang, J. Xu, P. Jia, Z. Hao, S. Qian, F. Zhao, <strong>R. Ma</strong>, X. Ju, J. Tang, X. Xie, S. Zhang, H. Jia</p>
-              <p class="publication-detail">Accepted for ACM Multimedia 2026 · arXiv:2607.19437</p>
+              <p class="publication-detail"><span class="lang lang-en">Accepted to ACM Multimedia 2026 · arXiv:2607.19437</span><span class="lang lang-zh" lang="zh-CN">被 ACM Multimedia 2026 接收 · arXiv:2607.19437</span></p>
             </article>
 
             <article class="publication reveal" data-type="conference">
               <div class="publication-figure"><img class="publication-figure-image publication-figure-image-square" src="assets/publications/see-to-act.png" alt="Core method figure from See to Act, Adapt to Act" loading="lazy" /></div>
-              <div class="publication-meta"><span>2026</span><span>ACM MULTIMEDIA</span><span>CONFERENCE</span></div>
+              <div class="publication-meta"><span>2026</span><span>ACM MULTIMEDIA</span><span class="lang lang-en">CONFERENCE</span><span class="lang lang-zh" lang="zh-CN">会议</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com/scholar?q=%22See+to+Act%2C+Adapt+to+Act%3A+Action-Stable+Continual+Test-Time+Adaptation+for+Multimodal+Embodied+Intelligence%22" target="_blank" rel="noreferrer">See to Act, Adapt to Act: Action-Stable Continual Test-Time Adaptation for Multimodal Embodied Intelligence <span aria-hidden="true">↗</span></a></h3>
               <p>P. Jia, X. Chi, <strong>R. Ma</strong>, J. Xu, C.-K. Fan, S. Zhang</p>
             </article>
 
             <article class="publication reveal" data-type="journal">
               <div class="publication-figure"><img class="publication-figure-image" src="assets/publications/scene-adaptive-crowd-counting.png" alt="Core method figure from Scene-Adaptive Unsupervised Crowd Counting" loading="lazy" /></div>
-              <div class="publication-meta"><span>2025</span><span>IEEE TCSVT</span><span>JOURNAL</span></div>
+              <div class="publication-meta"><span>2025</span><span>IEEE TCSVT</span><span class="lang lang-en">JOURNAL</span><span class="lang lang-zh" lang="zh-CN">期刊</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com.hk/citations?view_op=view_citation&amp;hl=en&amp;user=IJTYZlUAAAAJ&amp;citation_for_view=IJTYZlUAAAAJ:KlAtU1dfN6UC" target="_blank" rel="noreferrer">Scene-Adaptive Unsupervised Crowd Counting for Video Surveillance <span aria-hidden="true">↗</span></a></h3>
               <p><strong>R. Ma</strong>, Y. Hou, C. Li, H. Jia, X. Xie</p>
-              <p class="publication-detail">vol. 35, no. 7, pp. 6910–6925</p>
+              <p class="publication-detail"><span class="lang lang-en">vol. 35, no. 7, pp. 6910–6925</span><span class="lang lang-zh" lang="zh-CN">第35卷第7期，6910–6925页</span></p>
             </article>
 
             <article class="publication reveal" data-type="conference">
               <div class="publication-figure"><img class="publication-figure-image" src="assets/publications/enhanced-blind-watermarking.png" alt="Core method figure from Enhanced Blind Watermarking Against Black-Box Noise" loading="lazy" /></div>
-              <div class="publication-meta"><span>2024</span><span>IEEE ICME</span><span>ORAL</span></div>
+              <div class="publication-meta"><span>2024</span><span>IEEE ICME</span><span class="lang lang-en">ORAL</span><span class="lang lang-zh" lang="zh-CN">口头报告</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com.hk/citations?view_op=view_citation&amp;hl=en&amp;user=IJTYZlUAAAAJ&amp;citation_for_view=IJTYZlUAAAAJ:kNdYIx-mwKoC" target="_blank" rel="noreferrer">Enhanced Blind Watermarking Against Black-Box Noise: Leveraging CIN Framework <span aria-hidden="true">↗</span></a></h3>
               <p><strong>R. Ma</strong>, M. Guo, P. Jia, C. Li, Y. Hou, Y. Li, X. Xie, S. Zhang</p>
             </article>
 
             <article class="publication reveal" data-type="journal">
               <div class="publication-figure"><img class="publication-figure-image" src="assets/publications/frame-recurrent-crowd-counting.png" alt="Core method figure from Frame-Recurrent Video Crowd Counting" loading="lazy" /></div>
-              <div class="publication-meta"><span>2023</span><span>IEEE TCSVT</span><span>JOURNAL</span></div>
+              <div class="publication-meta"><span>2023</span><span>IEEE TCSVT</span><span class="lang lang-en">JOURNAL</span><span class="lang lang-zh" lang="zh-CN">期刊</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com.hk/citations?view_op=view_citation&amp;hl=en&amp;user=IJTYZlUAAAAJ&amp;citation_for_view=IJTYZlUAAAAJ:_FxGoFyzp5QC" target="_blank" rel="noreferrer">Frame-Recurrent Video Crowd Counting <span aria-hidden="true">↗</span></a></h3>
               <p>Y. Hou, S. Zhang, <strong>R. Ma</strong>, H. Jia, X. Xie</p>
-              <p class="publication-detail">vol. 33, no. 9, pp. 5186–5199</p>
+              <p class="publication-detail"><span class="lang lang-en">vol. 33, no. 9, pp. 5186–5199</span><span class="lang lang-zh" lang="zh-CN">第33卷第9期，5186–5199页</span></p>
             </article>
 
             <article class="publication reveal" data-type="conference">
               <div class="publication-figure"><img class="publication-figure-image" src="assets/publications/towards-blind-watermarking.png" alt="Core method figure from Towards Blind Watermarking" loading="lazy" /></div>
-              <div class="publication-meta"><span>2022</span><span>ACM MULTIMEDIA</span><span>CONFERENCE</span></div>
+              <div class="publication-meta"><span>2022</span><span>ACM MULTIMEDIA</span><span class="lang lang-en">CONFERENCE</span><span class="lang lang-zh" lang="zh-CN">会议</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com.hk/citations?view_op=view_citation&amp;hl=en&amp;user=IJTYZlUAAAAJ&amp;citation_for_view=IJTYZlUAAAAJ:ufrVoPGSRksC" target="_blank" rel="noreferrer">Towards Blind Watermarking: Combining Invertible and Non-invertible Mechanisms <span aria-hidden="true">↗</span></a></h3>
               <p><strong>R. Ma</strong>, M. Guo, Y. Hou, F. Yang, Y. Li, H. Jia, X. Xie</p>
               <a class="paper-link" href="https://github.com/rmpku/CIN" target="_blank" rel="noreferrer">
@@ -572,58 +581,58 @@
 
             <article class="publication reveal" data-type="journal">
               <div class="publication-figure"><img class="publication-figure-image publication-figure-image-square" src="assets/publications/chosen-plaintext-attack.png" alt="Core method figure from Chosen-Plaintext Attack to Linear Unitary Optical Encryption Systems" loading="lazy" /></div>
-              <div class="publication-meta"><span>2022</span><span>JOURNAL OF UCAS</span><span>JOURNAL</span></div>
+              <div class="publication-meta"><span>2022</span><span>JOURNAL OF UCAS</span><span class="lang lang-en">JOURNAL</span><span class="lang lang-zh" lang="zh-CN">期刊</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com.hk/citations?view_op=view_citation&amp;hl=en&amp;user=IJTYZlUAAAAJ&amp;citation_for_view=IJTYZlUAAAAJ:Zph67rFs4hoC" target="_blank" rel="noreferrer">Chosen-Plaintext Attack to Linear Unitary Optical Encryption Systems <span aria-hidden="true">↗</span></a></h3>
               <p>D. Miao, <strong>R. Ma</strong>, X. Sun, Y. Shi</p>
-              <p class="publication-detail">vol. 39, no. 2, p. 165</p>
+              <p class="publication-detail"><span class="lang lang-en">vol. 39, no. 2, p. 165</span><span class="lang lang-zh" lang="zh-CN">第39卷第2期，第165页</span></p>
             </article>
 
             <article class="publication reveal" data-type="journal">
               <div class="publication-figure"><img class="publication-figure-image publication-figure-image-square" src="assets/publications/optical-information-hiding.png" alt="Core method figure from Optical Information Hiding with Non-Mechanical Ptychography" loading="lazy" /></div>
-              <div class="publication-meta"><span>2021</span><span>OPTICS &amp; LASERS IN ENGINEERING</span><span>JOURNAL</span></div>
+              <div class="publication-meta"><span>2021</span><span>OPTICS &amp; LASERS IN ENGINEERING</span><span class="lang lang-en">JOURNAL</span><span class="lang lang-zh" lang="zh-CN">期刊</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com.hk/citations?view_op=view_citation&amp;hl=en&amp;user=IJTYZlUAAAAJ&amp;citation_for_view=IJTYZlUAAAAJ:W7OEmFMy1HYC" target="_blank" rel="noreferrer">Optical Information Hiding with Phase-Only and Non-Mechanical Ptychography <span aria-hidden="true">↗</span></a></h3>
               <p><strong>R. Ma</strong>, Y. Li, H. Jia, Y. Shi, X. Xie, T. Huang</p>
-              <p class="publication-detail">vol. 141, article 106569</p>
+              <p class="publication-detail"><span class="lang lang-en">vol. 141, article 106569</span><span class="lang lang-zh" lang="zh-CN">第141卷，文章编号106569</span></p>
             </article>
 
             <article class="publication reveal" data-type="journal">
               <div class="publication-figure"><img class="publication-figure-image" src="assets/publications/multi-image-encryption.png" alt="Core method figure from Multi-Image and Color Image Encryption" loading="lazy" /></div>
-              <div class="publication-meta"><span>2021</span><span>OPTICS COMMUNICATIONS</span><span>JOURNAL</span></div>
+              <div class="publication-meta"><span>2021</span><span>OPTICS COMMUNICATIONS</span><span class="lang lang-en">JOURNAL</span><span class="lang lang-zh" lang="zh-CN">期刊</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com.hk/citations?view_op=view_citation&amp;hl=en&amp;user=IJTYZlUAAAAJ&amp;citation_for_view=IJTYZlUAAAAJ:Tyk-4Ss8FVUC" target="_blank" rel="noreferrer">Multi-Image and Color Image Encryption via Multi-Slice Ptychographic Encoding <span aria-hidden="true">↗</span></a></h3>
               <p>J. Zhang, D. Yang, <strong>R. Ma</strong>, Y. Shi</p>
-              <p class="publication-detail">vol. 485, article 126762</p>
+              <p class="publication-detail"><span class="lang lang-en">vol. 485, article 126762</span><span class="lang lang-zh" lang="zh-CN">第485卷，文章编号126762</span></p>
             </article>
 
             <article class="publication reveal" data-type="journal">
               <div class="publication-figure"><img class="publication-figure-image publication-figure-image-square" src="assets/publications/scanning-position-error-correction.png" alt="Core method figure from Scanning-Position Error-Correction Algorithm" loading="lazy" /></div>
-              <div class="publication-meta"><span>2020</span><span>CHINESE PHYSICS LETTERS</span><span>JOURNAL</span></div>
+              <div class="publication-meta"><span>2020</span><span>CHINESE PHYSICS LETTERS</span><span class="lang lang-en">JOURNAL</span><span class="lang lang-zh" lang="zh-CN">期刊</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com.hk/citations?view_op=view_citation&amp;hl=en&amp;user=IJTYZlUAAAAJ&amp;citation_for_view=IJTYZlUAAAAJ:UeHWp8X0CEIC" target="_blank" rel="noreferrer">Scanning-Position Error-Correction Algorithm in Dual-Wavelength Ptychographic Microscopy <span aria-hidden="true">↗</span></a></h3>
               <p><strong>R. Ma</strong>, S. Zhang, T. Ruan, Y. Tao, Y. Shi</p>
-              <p class="publication-detail">vol. 37, no. 4</p>
+              <p class="publication-detail"><span class="lang lang-en">vol. 37, no. 4</span><span class="lang lang-zh" lang="zh-CN">第37卷第4期</span></p>
             </article>
 
             <article class="publication reveal" data-type="journal">
               <div class="publication-figure"><img class="publication-figure-image publication-figure-image-square" src="assets/publications/sharpness-autofocusing.png" alt="Core method figure from Sharpness-Statistics-Based Auto-Focusing" loading="lazy" /></div>
-              <div class="publication-meta"><span>2020</span><span>OPTICS &amp; LASERS IN ENGINEERING</span><span>JOURNAL</span></div>
+              <div class="publication-meta"><span>2020</span><span>OPTICS &amp; LASERS IN ENGINEERING</span><span class="lang lang-en">JOURNAL</span><span class="lang lang-zh" lang="zh-CN">期刊</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com.hk/citations?view_op=view_citation&amp;hl=en&amp;user=IJTYZlUAAAAJ&amp;citation_for_view=IJTYZlUAAAAJ:2osOgNQ5qMEC" target="_blank" rel="noreferrer">Sharpness-Statistics-Based Auto-Focusing Algorithm for Optical Ptychography <span aria-hidden="true">↗</span></a></h3>
               <p><strong>R. Ma</strong>, D. Yang, T. Yu, T. Li, Y. Shi</p>
-              <p class="publication-detail">vol. 128, article 106053</p>
+              <p class="publication-detail"><span class="lang lang-en">vol. 128, article 106053</span><span class="lang lang-zh" lang="zh-CN">第128卷，文章编号106053</span></p>
             </article>
 
             <article class="publication reveal" data-type="journal">
               <div class="publication-figure"><img class="publication-figure-image publication-figure-image-square" src="assets/publications/natural-speckle-watermarking.png" alt="Core method figure from Natural Speckle-Based Watermarking" loading="lazy" /></div>
-              <div class="publication-meta"><span>2020</span><span>OPTICS EXPRESS</span><span>JOURNAL</span></div>
+              <div class="publication-meta"><span>2020</span><span>OPTICS EXPRESS</span><span class="lang lang-en">JOURNAL</span><span class="lang lang-zh" lang="zh-CN">期刊</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com.hk/citations?view_op=view_citation&amp;hl=en&amp;user=IJTYZlUAAAAJ&amp;citation_for_view=IJTYZlUAAAAJ:qjMakFHDy7sC" target="_blank" rel="noreferrer">Natural Speckle-Based Watermarking with Random-Like Illuminated Decoding <span aria-hidden="true">↗</span></a></h3>
               <p>X. Sun, S. Zhang, <strong>R. Ma</strong>, Y. Tao, Y. Zhu, D. Yang, Y. Shi</p>
-              <p class="publication-detail">vol. 28, no. 21</p>
+              <p class="publication-detail"><span class="lang lang-en">vol. 28, no. 21</span><span class="lang lang-zh" lang="zh-CN">第28卷第21期</span></p>
             </article>
 
             <article class="publication reveal" data-type="journal">
               <div class="publication-figure"><img class="publication-figure-image publication-figure-image-square" src="assets/publications/enhanced-visual-cryptography.png" alt="Core method figure from Enhanced-Visual-Cryptography-Based Optical Information Hiding System" loading="lazy" /></div>
-              <div class="publication-meta"><span>2020</span><span>ACTA PHYSICA SINICA</span><span>JOURNAL</span></div>
+              <div class="publication-meta"><span>2020</span><span>ACTA PHYSICA SINICA</span><span class="lang lang-en">JOURNAL</span><span class="lang lang-zh" lang="zh-CN">期刊</span></div>
               <h3><a class="publication-title-link" href="https://scholar.google.com.hk/citations?view_op=view_citation&amp;hl=en&amp;user=IJTYZlUAAAAJ&amp;citation_for_view=IJTYZlUAAAAJ:3fE2CSJIrl8C" target="_blank" rel="noreferrer">Enhanced-Visual-Cryptography-Based Optical Information Hiding System <span aria-hidden="true">↗</span></a></h3>
               <p>Y. Tao, D. Yang, <strong>R. Ma</strong>, Y. Zhu, Y. Shi</p>
-              <p class="publication-detail">vol. 69, no. 14</p>
+              <p class="publication-detail"><span class="lang lang-en">vol. 69, no. 14</span><span class="lang lang-zh" lang="zh-CN">第69卷第14期</span></p>
             </article>
 
           </div>
@@ -633,7 +642,7 @@
       <section class="section patents-section" id="patents">
         <div class="shell">
           <div class="section-heading reveal">
-            <p class="section-index">05 / AUTHORIZED PATENTS</p>
+            <p class="section-index"><span class="lang lang-en">05 / AUTHORIZED PATENTS</span><span class="lang lang-zh" lang="zh-CN">05 / 已授权专利</span></p>
             <h2>
               <span class="lang lang-en">Authorized Patents</span>
               <span class="lang lang-zh" lang="zh-CN">已授权发明专利</span>
@@ -654,7 +663,7 @@
               <h3>
                 <a href="https://patents.google.com/patent/CN111563938B/zh" target="_blank" rel="noreferrer">
                   <span class="lang lang-en">Multi-Image Encryption and Decryption Method and System Based on Random Phase Layers and Multi-Slice Diffraction</span>
-                  <span class="lang lang-zh" lang="zh-CN">基于随机相位层和叠层衍射的多图像加密解密方法及系统</span>
+                  <span class="lang lang-zh" lang="zh-CN">基于随机相位层和叠层衍射的多图像加密与解密方法及系统</span>
                   <span aria-hidden="true">↗</span>
                 </a>
               </h3>
@@ -702,7 +711,7 @@
               <h3>
                 <a href="https://patents.google.com/patent/CN111526261B/zh" target="_blank" rel="noreferrer">
                   <span class="lang lang-en">Image Information Hiding and Recovery Method and System Based on White-Light Interference</span>
-                  <span class="lang lang-zh" lang="zh-CN">基于白光干涉的图像信息隐藏信息恢复方法及系统</span>
+                  <span class="lang lang-zh" lang="zh-CN">基于白光干涉的图像信息隐藏与恢复方法及系统</span>
                   <span aria-hidden="true">↗</span>
                 </a>
               </h3>
@@ -714,7 +723,7 @@
               <h3>
                 <a href="https://patents.google.com/patent/CN110308117B/zh" target="_blank" rel="noreferrer">
                   <span class="lang lang-en">Diffraction-Distance Calibration Method and System, and Image-Reconstruction Method and System</span>
-                  <span class="lang lang-zh" lang="zh-CN">衍射距离校准方法及系统和图像重建方法及系统</span>
+                  <span class="lang lang-zh" lang="zh-CN">衍射距离校准方法及系统、图像重建方法及系统</span>
                   <span aria-hidden="true">↗</span>
                 </a>
               </h3>
@@ -739,7 +748,7 @@
       <section class="section honors-section" id="honors">
         <div class="shell">
           <div class="section-heading reveal">
-            <p class="section-index">06 / FUNDING + HONORS</p>
+            <p class="section-index"><span class="lang lang-en">06 / FUNDING + HONORS</span><span class="lang lang-zh" lang="zh-CN">06 / 科研项目与荣誉</span></p>
             <h2>
               <span class="lang lang-en">Funding &amp; Honors</span>
               <span class="lang lang-zh" lang="zh-CN">科研项目与荣誉</span>
@@ -748,7 +757,7 @@
 
           <div class="funding-block">
             <div class="subsection-heading reveal">
-              <p class="section-index">06A / FUNDING</p>
+              <p class="section-index"><span class="lang lang-en">06A / FUNDING</span><span class="lang lang-zh" lang="zh-CN">06A / 科研项目</span></p>
               <h3>
                 <span class="lang lang-en">Funding</span>
                 <span class="lang lang-zh" lang="zh-CN">科研项目</span>
@@ -762,29 +771,29 @@
               </p>
               <div class="funding-grid">
                 <article>
-                  <div><span>2026—30</span><strong><span class="lang lang-en">CORE MEMBER</span><span class="lang lang-zh" lang="zh-CN">课题骨干</span></strong></div>
+                  <div><span>2026.09</span><strong><span class="lang lang-en">CORE MEMBER</span><span class="lang lang-zh" lang="zh-CN">课题骨干</span></strong></div>
                   <h3>
-                    <span class="lang lang-en">“Brain Science and Brain-Inspired Research” National Science and Technology Major Project</span>
+                    <span class="lang lang-en">National Science and Technology Major Project on “Brain Science and Brain-Inspired Research”</span>
                     <span class="lang lang-zh" lang="zh-CN">“脑科学与类脑研究”国家科技重大专项</span>
                   </h3>
                   <p>
-                    <span class="lang lang-en">Ultra-fast, ultra-high-definition, ultra-high-dynamic brain-inspired vision chips and algorithms · Peking University · Project No. 2026ZD0221700 · September 2026–December 2030</span>
-                    <span class="lang lang-zh" lang="zh-CN">超高速超高清超高动态类脑视觉芯片与算法研究 · 北京大学 · 项目编号：2026ZD0221700 · 2026年9月至2030年12月</span>
+                    <span class="lang lang-en">Research on ultra-high-speed, ultra-high-definition, and ultra-high-dynamic-range brain-inspired vision chips and algorithms · Peking University · Project No. 2026ZD0221700 · September 2026–December 2030</span>
+                    <span class="lang lang-zh" lang="zh-CN">超高速、超高清、超高动态类脑视觉芯片与算法研究 · 北京大学 · 项目编号：2026ZD0221700 · 2026年9月至2030年12月</span>
                   </p>
                 </article>
                 <article>
-                  <div><span>2026</span><strong>FELLOW</strong></div>
+                  <div><span>2026</span><strong><span class="lang lang-en">FELLOW</span><span class="lang lang-zh" lang="zh-CN">公派资助</span></strong></div>
                   <h3>
                     <span class="lang lang-en">China Scholarship Council (CSC) Fellowship</span>
                     <span class="lang lang-zh" lang="zh-CN">国家公派留学基金</span>
                   </h3>
                   <p>
-                    <span class="lang lang-en">Visiting advisor: mmlab@NTU <a class="external-link" href="https://liuziwei7.github.io/" target="_blank" rel="noreferrer">Prof. Ziwei Liu</a>, NTU Singapore</span>
-                    <span class="lang lang-zh" lang="zh-CN">合作导师：mmlab@NTU <a class="external-link" href="https://liuziwei7.github.io/" target="_blank" rel="noreferrer">刘子纬教授</a>，NTU Singapore</span>
+                    <span class="lang lang-en">Visiting advisor: <a class="external-link" href="https://liuziwei7.github.io/" target="_blank" rel="noreferrer">Prof. Ziwei Liu</a>, MMLab, Nanyang Technological University, Singapore</span>
+                    <span class="lang lang-zh" lang="zh-CN">访问合作导师：新加坡南洋理工大学 MMLab <a class="external-link" href="https://liuziwei7.github.io/" target="_blank" rel="noreferrer">刘子纬教授</a></span>
                   </p>
                 </article>
                 <article>
-                  <div><span>2026</span><strong>PI</strong></div>
+                  <div><span>2026</span><strong><span class="lang lang-en">PI</span><span class="lang lang-zh" lang="zh-CN">负责人</span></strong></div>
                   <h3>
                     <span class="lang lang-en">Outstanding Youth Program, Natural Science Foundation of Ningxia · Class B</span>
                     <span class="lang lang-zh" lang="zh-CN">宁夏自然科学基金优秀青年项目（B类）</span>
@@ -795,7 +804,7 @@
                   </p>
                 </article>
                 <article>
-                  <div><span>2022—25</span><strong>MEMBER</strong></div>
+                  <div><span>2022—25</span><strong><span class="lang lang-en">MEMBER</span><span class="lang lang-zh" lang="zh-CN">项目成员</span></strong></div>
                   <h3>
                     <span class="lang lang-en">MIIT High-Quality Project</span>
                     <span class="lang lang-zh" lang="zh-CN">工业和信息化部高质量专项</span>
@@ -806,8 +815,8 @@
                   </p>
                 </article>
                 <article>
-                  <div><span>2022—23</span><strong>MEMBER</strong></div>
-                  <h3>CCF–Baidu Pinecone Fund</h3>
+                  <div><span>2022—23</span><strong><span class="lang lang-en">MEMBER</span><span class="lang lang-zh" lang="zh-CN">项目成员</span></strong></div>
+                  <h3><span class="lang lang-en">CCF–Baidu Pinecone Fund</span><span class="lang lang-zh" lang="zh-CN">CCF—百度松果基金</span></h3>
                   <p>
                     <span class="lang lang-en">Cross-Scenario Generalization for 3D Perception in Autonomous Driving</span>
                     <span class="lang lang-zh" lang="zh-CN">面向自动驾驶三维感知的跨场景泛化</span>
@@ -819,7 +828,7 @@
 
           <div class="honors-block">
             <div class="subsection-heading reveal">
-              <p class="section-index">06B / HONORS</p>
+              <p class="section-index"><span class="lang lang-en">06B / HONORS</span><span class="lang lang-zh" lang="zh-CN">06B / 荣誉</span></p>
               <h3>
                 <span class="lang lang-en">Honors</span>
                 <span class="lang lang-zh" lang="zh-CN">荣誉</span>
@@ -859,7 +868,7 @@
                 <span>2013</span>
                 <h3>
                   <span class="lang lang-en">First Prize, Ningxia Division · Chinese Physics Olympiad (CPhO)</span>
-                  <span class="lang lang-zh" lang="zh-CN">全国中学生物理竞赛（CPhO）宁夏赛区一等奖</span>
+                  <span class="lang lang-zh" lang="zh-CN">全国中学生物理竞赛宁夏赛区一等奖</span>
                 </h3>
               </article>
             </div>
@@ -870,7 +879,7 @@
       <section class="section service-section" id="service">
         <div class="shell service-layout">
           <div class="section-heading reveal">
-            <p class="section-index">07 / ACADEMIC SERVICE</p>
+            <p class="section-index"><span class="lang lang-en">07 / ACADEMIC SERVICE</span><span class="lang lang-zh" lang="zh-CN">07 / 学术服务</span></p>
             <h2>
               <span class="lang lang-en">Academic Service</span>
               <span class="lang lang-zh" lang="zh-CN">学术服务</span>
@@ -903,11 +912,11 @@
         <div>
           <p class="footer-kicker">
             <span class="lang lang-en">LET'S COMPARE NOTES.</span>
-            <span class="lang lang-zh" lang="zh-CN">期待交流与合作。</span>
+            <span class="lang lang-zh" lang="zh-CN">欢迎交流探讨。</span>
           </p>
           <h2>
             <span class="lang lang-en">Research is better in conversation.</span>
-            <span class="lang lang-zh" lang="zh-CN">感兴趣就踢踢我~</span>
+            <span class="lang lang-zh" lang="zh-CN">研究因交流而更有意义。</span>
           </h2>
         </div>
         <span class="button button-light email-link">ruima AT pku.edu.cn</span>
