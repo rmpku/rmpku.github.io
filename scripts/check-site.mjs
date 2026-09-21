@@ -74,15 +74,28 @@ if (publicationYears.some((year, index) => index > 0 && year > publicationYears[
   throw new Error(`Publications are not reverse chronological: ${publicationYears.join(", ")}`);
 }
 
-const honorList = html.match(/<div class="honor-list">([\s\S]*?)<\/div>\s*<aside class="funding-panel/)?.[1];
+const honorList = html.match(/<div class="honor-list">([\s\S]*?)<\/div>/)?.[1];
 const fundingPanel = html.match(/<aside class="funding-panel reveal">([\s\S]*?)<\/aside>/)?.[1];
 const heroLinks = html.match(/<div class="hero-links">([\s\S]*?)<\/div>/)?.[1];
 if (!honorList || !fundingPanel || !heroLinks) {
   throw new Error("Could not locate honor, funding, or hero-link regions");
 }
+if (html.indexOf('class="funding-block"') > html.indexOf('class="honors-block"')) {
+  throw new Error("Funding must appear before Honors");
+}
 for (const fundingName of ["China Scholarship Council", "Outstanding Youth Program"]) {
   if (!fundingPanel.includes(fundingName) || honorList.includes(fundingName)) {
     throw new Error(`${fundingName} must appear in Funding only`);
+  }
+}
+for (const fundingText of [
+  "Brain Science and Brain-Inspired Research",
+  "2026ZD0221700",
+  "CORE MEMBER",
+  "课题骨干",
+]) {
+  if (!fundingPanel.includes(fundingText) || honorList.includes(fundingText)) {
+    throw new Error(`${fundingText} must appear in the new Funding entry only`);
   }
 }
 for (const profileUrl of [

@@ -38,4 +38,4 @@ each paper includes a replaceable figure slot for future experiment screenshots.
 patent section lists seven granted Chinese invention patents with grant publication
 numbers, authorization dates, bilingual titles, and external patent records. Publications
 are displayed in reverse chronological order; fellowships and research grants are kept in
-the Funding column, while GitHub and Google Scholar links remain in the hero.
+the Funding block before the Honors block, while GitHub and Google Scholar links remain in the hero.
