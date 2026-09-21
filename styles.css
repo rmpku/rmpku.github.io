@@ -1322,6 +1322,10 @@ body[data-language="zh"] .lang-en {
   font-size: 9px;
 }
 
+.funding-grid article > div strong {
+  font-size: 11px;
+}
+
 .service-layout {
   grid-template-columns: 0.8fr 1.2fr;
   align-items: start;

@@ -92,8 +92,12 @@ for (const fundingText of [
   "Brain Science and Brain-Inspired Research",
   "2026ZD0221700",
   "2026.09",
+  "2026.05",
+  "2026.02",
   "CORE MEMBER",
   "课题骨干",
+  "PI",
+  "项目负责人",
 ]) {
   if (!fundingPanel.includes(fundingText) || honorList.includes(fundingText)) {
     throw new Error(`${fundingText} must appear in Funding only`);
@@ -101,12 +105,16 @@ for (const fundingText of [
 }
 const fundingRolesEn = (fundingPanel.match(/>CORE MEMBER<\/span>/g) || []).length;
 const fundingRolesZh = (fundingPanel.match(/>课题骨干<\/span>/g) || []).length;
-if (fundingRolesEn !== 5 || fundingRolesZh !== 5) {
-  throw new Error("Every Funding entry must use CORE MEMBER / 课题骨干");
+if (fundingRolesEn !== 3 || fundingRolesZh !== 3) {
+  throw new Error("Three Funding entries must use CORE MEMBER / 课题骨干");
+}
+const fundingPiEn = (fundingPanel.match(/>PI<\/span>/g) || []).length;
+const fundingPiZh = (fundingPanel.match(/>项目负责人<\/span>/g) || []).length;
+if (fundingPiEn !== 2 || fundingPiZh !== 2) {
+  throw new Error("The CSC Fellowship and Ningxia Youth Program must use PI / 项目负责人");
 }
 for (const obsoleteRole of [
   ">FELLOW</span>",
-  ">PI</span>",
   ">MEMBER</span>",
   ">公派资助</span>",
   ">负责人</span>",
@@ -330,8 +338,8 @@ for (const advisor of [
 if (html.includes("https://cs.pku.edu.cn/info/1008/1093.htm")) {
   throw new Error("The previous Wen Gao profile URL must be removed");
 }
-if ((html.match(/Asst\. Prof\. Shanghang Zhang/g) || []).length !== 1) {
-  throw new Error("Shanghang Zhang must remain only as the postdoctoral co-advisor");
+if ((html.match(/Researcher Shanghang Zhang/g) || []).length !== 2) {
+  throw new Error("Shanghang Zhang must use the updated Researcher title");
 }
 if (!html.includes("timeline-logo-ucas")) {
   throw new Error("The UCAS logo must use a dedicated smaller-size class");
