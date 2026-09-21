@@ -96,8 +96,45 @@ for (const fundingText of [
   "课题骨干",
 ]) {
   if (!fundingPanel.includes(fundingText) || honorList.includes(fundingText)) {
-    throw new Error(`${fundingText} must appear in the new Funding entry only`);
+    throw new Error(`${fundingText} must appear in Funding only`);
   }
+}
+const fundingRolesEn = (fundingPanel.match(/>CORE MEMBER<\/span>/g) || []).length;
+const fundingRolesZh = (fundingPanel.match(/>课题骨干<\/span>/g) || []).length;
+if (fundingRolesEn !== 5 || fundingRolesZh !== 5) {
+  throw new Error("Every Funding entry must use CORE MEMBER / 课题骨干");
+}
+for (const obsoleteRole of [
+  ">FELLOW</span>",
+  ">PI</span>",
+  ">MEMBER</span>",
+  ">公派资助</span>",
+  ">负责人</span>",
+  ">项目成员</span>",
+]) {
+  if (fundingPanel.includes(obsoleteRole)) {
+    throw new Error(`Funding still contains an obsolete role: ${obsoleteRole}`);
+  }
+}
+const fundingYears = [...fundingPanel.matchAll(/<article>\s*<div><span>(\d{4})/g)].map(
+  (match) => Number(match[1]),
+);
+const honorYears = [
+  ...honorList.matchAll(/<article class="honor reveal">\s*<span>(\d{4})/g),
+].map((match) => Number(match[1]));
+for (const [label, years] of [
+  ["Funding", fundingYears],
+  ["Honors", honorYears],
+]) {
+  if (years.some((year, index) => index > 0 && year > years[index - 1])) {
+    throw new Error(`${label} is not reverse chronological: ${years.join(", ")}`);
+  }
+}
+if (
+  !/\.honor-list\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)/.test(css) ||
+  !/\.funding-grid\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)/.test(css)
+) {
+  throw new Error("Funding and Honors must use a single-column layout");
 }
 for (const profileUrl of [
   "https://github.com/rmpku",
