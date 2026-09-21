@@ -174,10 +174,13 @@ if (/\.(pdf|docx)\b|assets\/cv-/i.test(html)) {
 }
 
 for (const url of [
-  "https://www.ai.pku.edu.cn/info/1139/2918.htm",
+  "https://scholar.google.com.hk/citations?user=voqw10cAAAAJ&amp;hl=en",
   "https://liuziwei7.github.io/",
 ]) {
   if (!html.includes(url)) throw new Error(`Missing advisor homepage: ${url}`);
+}
+if (html.includes("https://www.ai.pku.edu.cn/info/1139/2918.htm")) {
+  throw new Error("The old Shanghang Zhang profile URL must be removed");
 }
 
 if (html.includes("张尚航") || !html.includes("仉尚航")) {
