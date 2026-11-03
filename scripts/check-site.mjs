@@ -211,7 +211,6 @@ if (!html.includes("ruima AT pku.edu.cn")) {
 }
 const expectedHeroStats = [
   ["Papers", "论文"],
-  ["Focus Areas", "研究方向"],
   ["Patents", "专利"],
   ["Honors", "荣誉"],
 ];

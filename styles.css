@@ -647,7 +647,7 @@ body[data-language="zh"] .lang-en {
   position: relative;
   z-index: 3;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   margin-top: 72px;
   border: 1px solid var(--line);
   border-radius: 16px;
