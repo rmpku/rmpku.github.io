@@ -546,7 +546,7 @@ body[data-language="zh"] .lang-en {
   padding: 2px 2px 9px;
   color: var(--blue);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.04em;
 }
 
@@ -582,7 +582,7 @@ body[data-language="zh"] .lang-en {
   padding-bottom: 9px;
   color: var(--teal);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
 }
