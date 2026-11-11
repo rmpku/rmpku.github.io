@@ -239,7 +239,7 @@ for (const obsoleteLabel of [
 if (
   !html.includes('id="scholar-citations-count"') ||
   !html.includes('id="scholar-citations-image"') ||
-  !html.includes('src="assets/scholar-citations.png?v=2026-11-03-390"') ||
+  !html.includes('src="assets/scholar-citations.png?v=2026-11-11-401"') ||
   !html.includes('<span class="lang lang-en">Google Scholar</span>') ||
   html.includes("Google Scholar citations · weekly")
 ) {
